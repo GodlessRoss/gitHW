@@ -14,6 +14,6 @@ public interface MakingEspresso {
 	int NEED_AMOUNT_OF_GROUND_COFFE = 22;
 	int NEED_AMOUNT_OF_WATER = 30;
 	
-	public void makeEspresso();
+	public void makeCoffe(String nameCoffe);
 	
 }
