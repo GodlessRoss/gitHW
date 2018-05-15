@@ -5,6 +5,8 @@ public class Coffemachine implements MakingEspresso {
 	private int maxAmountOfWater;
 	private int maxAmountOfUsedCoffee;
 
+	private boolean isOn = false;
+
 	private int currentAmountOfGroundCoffee;
 	private int currentAmountOfWater;
 	private int currentAmountOfUsedCoffee = 0;
@@ -37,36 +39,38 @@ public class Coffemachine implements MakingEspresso {
 		}
 	}
 
-	public int getMaxAmountOfGroundCoffee() {
-		return maxAmountOfGroundCoffee;
-	}
-
-	public void setMaxAmountOfGroundCoffee(int maxAmountOfGroundCoffee) {
+	public Coffemachine(int maxAmountOfGroundCoffee, int maxAmountOfWater, int maxAmountOfUsedCoffee) {
 		this.maxAmountOfGroundCoffee = maxAmountOfGroundCoffee;
-	}
-
-	public int getMaxAmountOfWater() {
-		return maxAmountOfWater;
-	}
-
-	public void setMaxAmountOfWater(int maxAmountOfWater) {
 		this.maxAmountOfWater = maxAmountOfWater;
-	}
-
-	public int getMaxAmountOfUsedCoffee() {
-		return maxAmountOfUsedCoffee;
-	}
-
-	public void setMaxAmountOfUsedCoffee(int maxAmountOfUsedCoffee) {
 		this.maxAmountOfUsedCoffee = maxAmountOfUsedCoffee;
+	}
+
+	public boolean isOn() {
+		return isOn;
+	}
+
+	public void setOn(boolean isOn) {
+		this.isOn = isOn;
 	}
 
 	public int getCurrentAmountOfGroundCoffee() {
 		return currentAmountOfGroundCoffee;
 	}
 
+	public void setCurrentAmountOfGroundCoffee(int currentAmountOfGroundCoffee) {
+		if (currentAmountOfUsedCoffee > maxAmountOfGroundCoffee) {
+			System.out.println("Заданны неверные параметры");
+			System.exit(42);
+		}
+		this.currentAmountOfGroundCoffee = currentAmountOfGroundCoffee;
+	}
+
+	public int getCurrentAmountOfWater() {
+		return currentAmountOfWater;
+	}
+
 	public void setCurrentAmountOfWater(int currentAmountOfWater) {
-		if (currentAmountOfGroundCoffee > maxAmountOfGroundCoffee) {
+		if (currentAmountOfWater > maxAmountOfWater) {
 			System.out.println("Заданны неверные параметры");
 			System.exit(42);
 		}
@@ -77,11 +81,7 @@ public class Coffemachine implements MakingEspresso {
 		return currentAmountOfUsedCoffee;
 	}
 
-	public void setCurrentAmountOfUsedCoffee(int currentAmountOfUsedCoffee) {
-		if (currentAmountOfUsedCoffee > maxAmountOfGroundCoffee) {
-			System.out.println("Заданны неверные параметры");
-			System.exit(42);
-		}
+	public void setCurrentAmountOfUsedCoffeeZiro(int currentAmountOfUsedCoffee) {
 		this.currentAmountOfUsedCoffee = currentAmountOfUsedCoffee;
 	}
 

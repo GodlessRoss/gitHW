@@ -1,3 +1,6 @@
+/**
+ * Данный интерфейс хранис инструкции для приготовления американо
+ */
 package v1;
 
 public interface MakingAmericano {
