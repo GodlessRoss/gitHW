@@ -65,15 +65,11 @@ public class Coffemachine implements MakingEspresso {
 		return currentAmountOfGroundCoffee;
 	}
 
-	public void setCurrentAmountOfGroundCoffee(int currentAmountOfGroundCoffee) {
-		this.currentAmountOfGroundCoffee = currentAmountOfGroundCoffee;
-	}
-
-	public int getCurrentAmountOfWater() {
-		return currentAmountOfWater;
-	}
-
 	public void setCurrentAmountOfWater(int currentAmountOfWater) {
+		if (currentAmountOfGroundCoffee > maxAmountOfGroundCoffee) {
+			System.out.println("Заданны неверные параметры");
+			System.exit(42);
+		}
 		this.currentAmountOfWater = currentAmountOfWater;
 	}
 
@@ -82,6 +78,10 @@ public class Coffemachine implements MakingEspresso {
 	}
 
 	public void setCurrentAmountOfUsedCoffee(int currentAmountOfUsedCoffee) {
+		if (currentAmountOfUsedCoffee > maxAmountOfGroundCoffee) {
+			System.out.println("Заданны неверные параметры");
+			System.exit(42);
+		}
 		this.currentAmountOfUsedCoffee = currentAmountOfUsedCoffee;
 	}
 
