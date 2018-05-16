@@ -1,6 +1,6 @@
 package v1;
 
-public class Coffemachine implements MakingEspresso {
+public class Coffemachine implements MakingEspresso,MakingAmericano {
 	private int maxAmountOfGroundCoffee;
 	private int maxAmountOfWater;
 	private int maxAmountOfUsedCoffee;

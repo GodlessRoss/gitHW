@@ -13,6 +13,7 @@ public class Main {
 		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500);
 		preparationForWork(coffemachine);
 		startProgramm(coffemachine);
+		
 	
 	}
 
@@ -21,12 +22,15 @@ public class Main {
 		coffemachine.setCurrentAmountOfGroundCoffee(scan.nextInt());
 		System.out.print("Налейте в кофемашину воды" + "\n > ");
 		coffemachine.setCurrentAmountOfWater(scan.nextInt());
+		
 	}
 
 	private static void startProgramm(Coffemachine coffemachine) {
 		byte choose = makeChoose();
 		selectionProcessing(coffemachine, choose);
 		startProgramm(coffemachine);
+		Display a = new Display();
+		a.Message();
 	}
 
 	private static byte makeChoose() {
