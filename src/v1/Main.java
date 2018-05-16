@@ -16,9 +16,9 @@ public class Main {
 	}
 
 	private static void preparationForWork(Coffemachine coffemachine) {
-		System.out.print("Для начала работы, засыпте в кофемашину молотый кофе" + "\n > ");
+		Display.printInstructionsForLackOfCoffee();
 		coffemachine.setCurrentAmountOfGroundCoffee(scan.nextInt());
-		System.out.print("Налейте в кофемашину воды" + "\n > ");
+		Display.printInstructionsForLackOfWhater();
 		coffemachine.setCurrentAmountOfWater(scan.nextInt());
 
 	}
@@ -31,8 +31,7 @@ public class Main {
 	}
 
 	private static byte makeChoose() {
-		System.out.print("Выберите кнопку:" + "\n1■ Включить" + "\n2■ Выключить" + "\n3■ Приготовить эспрессо"
-				+ "\n4■ Приготовить американо" + "\n5■ Очистка бака отработанного кофе" + "\n > ");
+		Display.printMenu();
 		return scan.nextByte();
 	}
 
