@@ -25,11 +25,11 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 			break;
 		}
 		if (currentAmountOfGroundCoffee < tempAmountOfGroundCoffee) {
-			Display.printError("not enough ground сoffee");
+			Display.printError("not enough ground сoffee", this);
 		} else if (currentAmountOfWater < tempAmountOfWater) {
-			Display.printError("not enough water");
+			Display.printError("not enough water", this);
 		} else if (maxAmountOfUsedCoffee - currentAmountOfUsedCoffee < tempAmountOfGroundCoffee) {
-			Display.printError("too much used сoffee");
+			Display.printError("too much used сoffee", this);
 		} else {
 			currentAmountOfGroundCoffee -= tempAmountOfGroundCoffee;
 			currentAmountOfWater -= tempAmountOfWater;
@@ -57,11 +57,11 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 	}
 
 	public void setCurrentAmountOfGroundCoffee(int currentAmountOfGroundCoffee) {
-		if (currentAmountOfUsedCoffee > maxAmountOfGroundCoffee) {
-			System.out.println("Заданны неверные параметры");
+		this.currentAmountOfGroundCoffee += currentAmountOfGroundCoffee;
+		if (this.currentAmountOfGroundCoffee > maxAmountOfGroundCoffee) {
+			Display.printFatalError();
 			System.exit(42);
 		}
-		this.currentAmountOfGroundCoffee = currentAmountOfGroundCoffee;
 	}
 
 	public int getCurrentAmountOfWater() {
@@ -69,11 +69,11 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 	}
 
 	public void setCurrentAmountOfWater(int currentAmountOfWater) {
-		if (currentAmountOfWater > maxAmountOfWater) {
-			System.out.println("Заданны неверные параметры");
+		this.currentAmountOfWater += currentAmountOfWater;
+		if (this.currentAmountOfWater > maxAmountOfWater) {
+			Display.printFatalError();
 			System.exit(42);
 		}
-		this.currentAmountOfWater = currentAmountOfWater;
 	}
 
 	public int getCurrentAmountOfUsedCoffee() {

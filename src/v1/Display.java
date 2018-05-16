@@ -1,5 +1,7 @@
 package v1;
 
+import java.util.Scanner;
+
 public abstract class Display {
 
 	public static void printGreating() {
@@ -10,21 +12,41 @@ public abstract class Display {
 		System.out.println("Начинаю готовить " + nameCoffe);
 		System.out.println("Ваш " + nameCoffe + " готов.");
 	}
-	
-	public static void printError(String error) {
+
+	public static void printFatalError() {
+		System.out.println("Произошла аварийная ситуация!" + "\nБак переполнен"
+				+ "\nУбедитесь, что количество кофе или воды не превышает максимально допустимое значение!"
+				+ "\nПосле этого включите кофемашину и введите значения еще раз.");
+		Display.printParting();
+	}
+
+	public static void printError(String error, Coffemachine coffemachine) {
+		Scanner scan = new Scanner(System.in);
+		char choose;
 		System.out.println("Ошибка!");
 		switch (error) {
 		case "not enough ground сoffee":
 			System.out.println("Отсутствует молотый кофе!");
+			System.out.print("Вы засыпали кофе?\n Y/N" + "\n > ");
+			choose = scan.next().charAt(0);
+			scan.close();
+			if ('Y' == choose) {
+				System.out.print("Сколько вы засыпали?" + "\n > ");
+				coffemachine.setCurrentAmountOfGroundCoffee(scan.nextInt());
+			}
 			break;
 		case "not enough water":
 			System.out.println("Отсутствует вода!");
+			System.out.println("Вы долили воды?\n Y/N \n >  ");
+			choose = scan.next().charAt(0);
+			scan.close();
+			if ('Y' == choose) {
+				System.out.print("Сколько вы долили?" + "\n > ");
+				coffemachine.setCurrentAmountOfWater(scan.nextInt());
+			}
 			break;
 		case "too much used сoffee":
 			System.out.println("Переполнен бак с отработанным кофе");
-			break;
-
-		default:
 			break;
 		}
 	}
@@ -47,11 +69,11 @@ public abstract class Display {
 	}
 
 	public static void printInstructionsForLackOfCoffee() {
-		System.out.print("Засыпте в кофемашину молотый кофе" + "\n > ");
+		System.out.print("Засыпте в кофемашину молотый кофе и укажите количество" + "\n > ");
 	}
 
 	public static void printInstructionsForLackOfWhater() {
-		System.out.print("Налейте в кофемашину воды" + "\n > ");
+		System.out.print("Налейте в кофемашину воды и укажите количество" + "\n > ");
 	}
 
 	public static void printCoffemachineIsOn() {
@@ -63,7 +85,7 @@ public abstract class Display {
 	}
 
 	public static void printParting() {
-		System.out.println("Досвидания" + "\n LOS"); // logo
+		System.out.println("\nДосвидания" + "\n LOS"); // logo
 	}
 
 }
