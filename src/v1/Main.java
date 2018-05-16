@@ -9,7 +9,7 @@ public class Main {
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		System.out.println("Для выхода из программы дважды нажмите  ■ Выключить ");
+		Display.printGreating();
 		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500);
 		preparationForWork(coffemachine);
 		startProgramm(coffemachine);
@@ -34,22 +34,22 @@ public class Main {
 		Display.printMenu();
 		return scan.nextByte();
 	}
-
+	
 	private static void selectionProcessing(Coffemachine coffemachine, byte choose) {
 		switch (choose) {
 		case 1:
 			if (!coffemachine.isOn()) {
-				System.out.println("Кофемашина включается!" + "\n LOS"); // logo
+				Display.printCoffemachineIsOn();
 				coffemachine.setOn(true);
 			}
 			break;
 		case 2:
 			clickСount++;
 			if (clickСount == 2) {
-				System.out.println("Досвидания" + "\n LOS"); // logo
+				Display.printParting();
 				System.exit(42);
 			}
-			System.out.println("Кофемашина выключается!" + "\n LOS"); // logo
+			Display.printCoffemachineIsOff();
 			coffemachine.setOn(true);
 			break;
 		case 3:
@@ -62,7 +62,7 @@ public class Main {
 			break;
 		case 5:
 			clickСount = 0;
-			coffemachine.setCurrentAmountOfUsedCoffeeZiro(0);
+			coffemachine.setCurrentAmountOfUsedCoffeeNil();
 			break;
 		default:
 			break;

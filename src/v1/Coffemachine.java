@@ -25,17 +25,16 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 			break;
 		}
 		if (currentAmountOfGroundCoffee < tempAmountOfGroundCoffee) {
-			System.out.println("ошибка: Отсутствует молотый кофе!");
+			Display.printError("not enough ground сoffee");
 		} else if (currentAmountOfWater < tempAmountOfWater) {
-			System.out.println("ошибка: Отсутствует вода!");
+			Display.printError("not enough water");
 		} else if (maxAmountOfUsedCoffee - currentAmountOfUsedCoffee < tempAmountOfGroundCoffee) {
-			System.out.println("Переполнен бак с отработанным кофе");
+			Display.printError("too much used сoffee");
 		} else {
-			System.out.println("Начинаю готовить " + nameCoffe);
 			currentAmountOfGroundCoffee -= tempAmountOfGroundCoffee;
 			currentAmountOfWater -= tempAmountOfWater;
 			currentAmountOfUsedCoffee += tempAmountOfGroundCoffee;
-			System.out.println("Ваш " + nameCoffe + " готов.");
+			Display.printСoffeeMaking(nameCoffe);
 		}
 	}
 
@@ -81,8 +80,8 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 		return currentAmountOfUsedCoffee;
 	}
 
-	public void setCurrentAmountOfUsedCoffeeZiro(int currentAmountOfUsedCoffee) {
-		this.currentAmountOfUsedCoffee = currentAmountOfUsedCoffee;
+	public void setCurrentAmountOfUsedCoffeeNil() {
+		currentAmountOfUsedCoffee = 0;
 	}
 
 	public int getMaxAmountOfGroundCoffee() {
