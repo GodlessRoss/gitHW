@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
 	static byte clickСount = 0;
-	
+
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -20,12 +20,11 @@ public class Main {
 		coffemachine.setCurrentAmountOfGroundCoffee(scan.nextInt());
 		System.out.print("Налейте в кофемашину воды" + "\n > ");
 		coffemachine.setCurrentAmountOfWater(scan.nextInt());
-		
+
 	}
 
 	private static void startProgramm(Coffemachine coffemachine) {
-		Display a = new Display();
-		a.Message(coffemachine);
+		Display.printState(coffemachine);
 		byte choose = makeChoose();
 		selectionProcessing(coffemachine, choose);
 		startProgramm(coffemachine);
@@ -41,7 +40,7 @@ public class Main {
 		switch (choose) {
 		case 1:
 			if (!coffemachine.isOn()) {
-				System.out.println("Кофемашина включается!" + "\nLOS"); // logo
+				System.out.println("Кофемашина включается!" + "\n LOS"); // logo
 				coffemachine.setOn(true);
 			}
 			break;
@@ -51,7 +50,7 @@ public class Main {
 				System.out.println("Досвидания" + "\n LOS"); // logo
 				System.exit(42);
 			}
-			System.out.println("Кофемашина выключается!" + "\nLOS"); // logo
+			System.out.println("Кофемашина выключается!" + "\n LOS"); // logo
 			coffemachine.setOn(true);
 			break;
 		case 3:

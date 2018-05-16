@@ -1,6 +1,6 @@
 package v1;
 
-public class Coffemachine implements MakingEspresso,MakingAmericano {
+public class Coffemachine implements MakingEspresso, MakingAmericano {
 	private int maxAmountOfGroundCoffee;
 	private int maxAmountOfWater;
 	private int maxAmountOfUsedCoffee;
@@ -83,6 +83,18 @@ public class Coffemachine implements MakingEspresso,MakingAmericano {
 
 	public void setCurrentAmountOfUsedCoffeeZiro(int currentAmountOfUsedCoffee) {
 		this.currentAmountOfUsedCoffee = currentAmountOfUsedCoffee;
+	}
+
+	public int getMaxAmountOfGroundCoffee() {
+		return maxAmountOfGroundCoffee;
+	}
+
+	public int getMaxAmountOfWater() {
+		return maxAmountOfWater;
+	}
+
+	public int getMaxAmountOfUsedCoffee() {
+		return maxAmountOfUsedCoffee;
 	}
 
 }
