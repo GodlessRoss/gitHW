@@ -13,8 +13,6 @@ public class Main {
 		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500);
 		preparationForWork(coffemachine);
 		startProgramm(coffemachine);
-		
-	
 	}
 
 	private static void preparationForWork(Coffemachine coffemachine) {
@@ -26,11 +24,11 @@ public class Main {
 	}
 
 	private static void startProgramm(Coffemachine coffemachine) {
+		Display a = new Display();
+		a.Message(coffemachine);
 		byte choose = makeChoose();
 		selectionProcessing(coffemachine, choose);
 		startProgramm(coffemachine);
-		Display a = new Display();
-		a.Message();
 	}
 
 	private static byte makeChoose() {
