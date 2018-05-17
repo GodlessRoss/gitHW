@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Display.printGreating();
-		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500);
+		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500,3000,1500);
 		preparationForWork(coffemachine);
 		startProgramm(coffemachine);
 	}
@@ -20,6 +20,10 @@ public class Main {
 		coffemachine.setCurrentAmountOfGroundCoffee(scan.nextInt());
 		Display.printInstructionsForLackOfWhater();
 		coffemachine.setCurrentAmountOfWater(scan.nextInt());
+		Display.printInstructionsForLackOfMilk();
+		coffemachine.setCurrentAmountOfMilk(scan.nextInt());
+		Display.printInstructionsForLackOfBeansCoffee();
+		coffemachine.setCurrentAmountOfBeansCoffee(scan.nextInt());
 
 	}
 
@@ -63,6 +67,14 @@ public class Main {
 		case 5:
 			clickСount = 0;
 			coffemachine.setCurrentAmountOfUsedCoffeeNil();
+			break;
+		case 6:
+			clickСount=0;
+			coffemachine.makeCoffe("латте");
+			break;
+		case 7:
+			clickСount=0;
+			coffemachine.makeCoffe("капучино");
 			break;
 		default:
 			break;
