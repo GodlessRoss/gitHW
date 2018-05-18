@@ -1,11 +1,10 @@
 /**
  * Данный интерфейс хранис инструкции для приготовления американо
  */
-package v1;
+package coffemachine;
 
-public interface MakingAmericano {
+public interface MakingAmericano extends MakingCoffee {
 
-	int NEED_AMOUNT_OF_GROUND_COFFE = 22;
 	int NEED_AMOUNT_OF_WATER = 100;
 	
 }

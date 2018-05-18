@@ -1,4 +1,4 @@
-package v1;
+package coffemachine;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Display.printGreating();
-		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500,3000,1500);
+		Coffemachine coffemachine = new Coffemachine(3000, 5000, 500, 3000, 1500);
 		preparationForWork(coffemachine);
 		startProgramm(coffemachine);
 	}
@@ -28,7 +28,9 @@ public class Main {
 	}
 
 	private static void startProgramm(Coffemachine coffemachine) {
-		Display.printState(coffemachine);
+		if (coffemachine.isOn()) {
+			Display.printState(coffemachine);
+		}
 		byte choose = makeChoose();
 		selectionProcessing(coffemachine, choose);
 		startProgramm(coffemachine);
@@ -38,7 +40,7 @@ public class Main {
 		Display.printMenu();
 		return scan.nextByte();
 	}
-	
+
 	private static void selectionProcessing(Coffemachine coffemachine, byte choose) {
 		switch (choose) {
 		case 1:
@@ -48,35 +50,43 @@ public class Main {
 			}
 			break;
 		case 2:
-			clickСount++;
-			if (clickСount == 2) {
-				Display.printParting();
-				System.exit(42);
-			}
-			Display.printCoffemachineIsOff();
-			coffemachine.setOn(true);
+				clickСount++;
+				if (clickСount == 2) {
+					Display.printParting();
+					System.exit(42);
+				}
+				Display.printCoffemachineIsOff();
+				coffemachine.setOn(false);
 			break;
+		// case 3:
+		// if (coffemachine.isOn()) {
+		// clickСount = 0;
+		// coffemachine.makeCoffe("эспрессо");
+		// }
+		// break;
 		case 3:
-			clickСount = 0;
-			coffemachine.makeCoffe("эспрессо");
+			if (coffemachine.isOn()) {
+				clickСount = 0;
+				coffemachine.makeCoffe("американо");
+			}
 			break;
+		// case 6:
+		// if (coffemachine.isOn()) {
+		// clickСount = 0;
+		// coffemachine.makeCoffe("капучино");
+		// }
+		// break;
 		case 4:
-			clickСount = 0;
-			coffemachine.makeCoffe("американо");
+			if (coffemachine.isOn()) {
+				clickСount = 0;
+				coffemachine.makeCoffe("латте");
+			}
 			break;
 		case 5:
-			clickСount = 0;
-			coffemachine.setCurrentAmountOfUsedCoffeeNil();
-			break;
-		case 6:
-			clickСount=0;
-			coffemachine.makeCoffe("латте");
-			break;
-		case 7:
-			clickСount=0;
-			coffemachine.makeCoffe("капучино");
-			break;
-		default:
+			if (coffemachine.isOn()) {
+				clickСount = 0;
+				coffemachine.setCurrentAmountOfUsedCoffeeNil();
+			}
 			break;
 		}
 	}

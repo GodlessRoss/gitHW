@@ -1,11 +1,10 @@
 /**
  * Данный интерфейс хранис инструкции для приготовления эспрессо
  */
-package v1;
+package coffemachine;
 
-public interface MakingEspresso {
+public interface MakingEspresso extends MakingCoffee{
 
-	int NEED_AMOUNT_OF_GROUND_COFFE = 22;
 	int NEED_AMOUNT_OF_WATER = 30;
 	
 }

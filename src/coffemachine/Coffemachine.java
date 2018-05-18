@@ -1,8 +1,10 @@
-package v1;
+package coffemachine;
 
 import java.util.Scanner;
 
-public class Coffemachine implements MakingEspresso, MakingAmericano {
+public class Coffemachine implements MakingAmericano, MakingLate, MakingCappuccino {
+	Scanner scanner = new Scanner(System.in);
+
 	private int maxAmountOfGroundCoffee;
 	private int maxAmountOfWater;
 	private int maxAmountOfUsedCoffee;
@@ -16,7 +18,6 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 	private int currentAmountOfUsedCoffee = 0;
 	private int currentAmountOfMilk;
 	private int currentAmountOfBeansCoffee;
-	Scanner scanner = new Scanner(System.in);
 
 	public int getMaxAmountOfMilk() {
 		return maxAmountOfMilk;
@@ -30,47 +31,61 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 		int tempAmountOfGroundCoffee = 0;
 		int tempAmountOfWater = 0;
 		int tempAmountOfMilk = 0;
-		int tempAmountOfBeansCoffee = 0;
+		boolean isHasFoat = false;
 		switch (nameCoffe) {
-		case "эспрессо":
-			tempAmountOfGroundCoffee = MakingEspresso.NEED_AMOUNT_OF_GROUND_COFFE;
-			tempAmountOfWater = MakingEspresso.NEED_AMOUNT_OF_WATER;
-			break;
+		// case "эспрессо":
+		// tempAmountOfGroundCoffee = NEED_AMOUNT_OF_GROUND_COFFE;
+		// tempAmountOfWater = MakingEspresso.NEED_AMOUNT_OF_WATER;
+		// break;
 		case "американо":
-			tempAmountOfGroundCoffee = MakingAmericano.NEED_AMOUNT_OF_GROUND_COFFE;
+			tempAmountOfGroundCoffee = NEED_AMOUNT_OF_GROUND_COFFE;
 			tempAmountOfWater = MakingAmericano.NEED_AMOUNT_OF_WATER;
 			break;
+		// case "капучино":
+		// tempAmountOfGroundCoffee = NEED_AMOUNT_OF_GROUND_COFFE;
+		// tempAmountOfWater = MakingCappuccino.NEED_AMOUNT_OF_WATER;
+		// System.out.println("Введите количество молока");
+		// tempAmountOfMilk = scanner.nextInt();
+		// isHasFoat = MakingCappuccino.IS_HAS_FOAM;
+		// break;
 		case "латте":
-			tempAmountOfGroundCoffee = MakingEspresso.NEED_AMOUNT_OF_GROUND_COFFE;
-			tempAmountOfWater = MakingEspresso.NEED_AMOUNT_OF_WATER;
-			System.out.println("Введите количество молока");
+			tempAmountOfGroundCoffee = NEED_AMOUNT_OF_GROUND_COFFE;
+			tempAmountOfWater = MakingLate.NEED_AMOUNT_OF_WATER;
+			System.out.print("Введите количество молока\n > ");
 			tempAmountOfMilk = scanner.nextInt();
-			break;
-		case "капучино":
-			tempAmountOfGroundCoffee = MakingEspresso.NEED_AMOUNT_OF_GROUND_COFFE;
-			tempAmountOfWater = MakingEspresso.NEED_AMOUNT_OF_WATER;
-			System.out.println("Введите количество молока");
-			tempAmountOfMilk = scanner.nextInt();
+			isHasFoat = MakingLate.IS_HAS_FOAM;
 			break;
 		}
+		grindCoffee();
 		if (currentAmountOfGroundCoffee < tempAmountOfGroundCoffee) {
 			Display.printError("not enough ground сoffee", this);
+			Display.printError("not enough beans coffee", this);
 		} else if (currentAmountOfWater < tempAmountOfWater) {
 			Display.printError("not enough water", this);
 		} else if (maxAmountOfUsedCoffee - currentAmountOfUsedCoffee < tempAmountOfGroundCoffee) {
 			Display.printError("too much used сoffee", this);
 		} else if (currentAmountOfMilk < tempAmountOfMilk) {
 			Display.printError("not enough milk", this);
-		} else if (currentAmountOfBeansCoffee < tempAmountOfBeansCoffee) {
-			Display.printError("not enough beans coffee", this);
 		} else {
-			currentAmountOfGroundCoffee -= tempAmountOfGroundCoffee - currentAmountOfBeansCoffee;
+			currentAmountOfGroundCoffee -= tempAmountOfGroundCoffee;
 			currentAmountOfWater -= tempAmountOfWater;
 			currentAmountOfUsedCoffee += tempAmountOfGroundCoffee;
 			currentAmountOfMilk -= tempAmountOfMilk;
-			currentAmountOfBeansCoffee -= currentAmountOfBeansCoffee;// не уверен в
-																 // правильности
-			Display.printСoffeeMaking(nameCoffe);
+			Display.printСoffeeMaking(nameCoffe, isHasFoat, tempAmountOfMilk);
+		}
+	}
+
+	private void grindCoffee() {
+		int necessaryToFallAsleep = maxAmountOfGroundCoffee - currentAmountOfGroundCoffee;
+		if (currentAmountOfBeansCoffee == 0) {
+			return;
+		}
+		if (currentAmountOfBeansCoffee > necessaryToFallAsleep) {
+			currentAmountOfBeansCoffee -= necessaryToFallAsleep;
+			currentAmountOfGroundCoffee += necessaryToFallAsleep;
+		} else {
+			currentAmountOfGroundCoffee += currentAmountOfBeansCoffee;
+			currentAmountOfBeansCoffee = 0;
 		}
 	}
 
@@ -99,7 +114,14 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 		this.currentAmountOfGroundCoffee += currentAmountOfGroundCoffee;
 		if (this.currentAmountOfGroundCoffee > maxAmountOfGroundCoffee) {
 			Display.printFatalError();
-			System.exit(42);
+			Display.printToFinishWork();
+			char choose = scanner.next().charAt(0);
+			if ('Y' == choose) {
+				System.exit(42);
+			}
+			this.currentAmountOfGroundCoffee -= currentAmountOfGroundCoffee;
+			Display.printError("not enough ground сoffee", this);
+			;
 		}
 	}
 
@@ -111,7 +133,14 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 		this.currentAmountOfMilk += currentAmountOfMilk;
 		if (this.currentAmountOfMilk > maxAmountOfMilk) {
 			Display.printFatalError();
-			System.exit(42);
+			Display.printToFinishWork();
+			char choose = scanner.next().charAt(0);
+			if ('Y' == choose) {
+				System.exit(42);
+			}
+			this.currentAmountOfMilk -= currentAmountOfMilk;
+			Display.printError("not enough milk", this);
+			;
 		}
 	}
 
@@ -123,7 +152,13 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 		this.currentAmountOfWater += currentAmountOfWater;
 		if (this.currentAmountOfWater > maxAmountOfWater) {
 			Display.printFatalError();
-			System.exit(42);
+			Display.printToFinishWork();
+			char choose = scanner.next().charAt(0);
+			if ('Y' == choose) {
+				System.exit(42);
+			}
+			this.currentAmountOfWater -= currentAmountOfWater;
+			Display.printError("not enough water", this);
 		}
 	}
 
@@ -155,7 +190,14 @@ public class Coffemachine implements MakingEspresso, MakingAmericano {
 		this.currentAmountOfBeansCoffee += currentAmountOfBeansCoffee;
 		if (this.currentAmountOfBeansCoffee > maxAmountOfBeansCoffee) {
 			Display.printFatalError();
-			System.exit(42);
+			Display.printToFinishWork();
+			char choose = scanner.next().charAt(0);
+			if ('Y' == choose) {
+				System.exit(42);
+			}
+			this.currentAmountOfBeansCoffee -= currentAmountOfBeansCoffee;
+			Display.printError("not enough beans coffee", this);
+			;
 		}
 
 	}

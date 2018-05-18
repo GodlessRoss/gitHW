@@ -1,4 +1,4 @@
-package v1;
+package coffemachine;
 
 import java.util.Scanner;
 
@@ -8,18 +8,32 @@ public abstract class Display {
 		System.out.println("Для выхода из программы дважды нажмите  ■ Выключить ");
 	}
 
-	public static void printСoffeeMaking(String nameCoffe) {
-		System.out.println("Начинаю готовить " + nameCoffe);
-		System.out.println("Ваш " + nameCoffe + " готов.");
+	public static void printСoffeeMaking(String nameCoffe, boolean isHasFoat, int amountOfMilk) {
+		System.out.println("\nНачинаю готовить " + nameCoffe);
+		System.out.println("Добавляю " + MakingCoffee.NEED_AMOUNT_OF_GROUND_COFFE + " гр. кофе.");
+		if ("американо".equals(nameCoffe)) {
+			System.out.println("Добавляю " + MakingAmericano.NEED_AMOUNT_OF_WATER + " мл. воды.");
+		} else {
+			System.out.println("Добавляю " + MakingEspresso.NEED_AMOUNT_OF_WATER + " мл. воды.");
+		}
+		if (amountOfMilk > 0) {
+			System.out.println("Добовляю " + amountOfMilk + " мл. молока.");
+		}
+		if (isHasFoat) {
+			System.out.println("Взбеваю пенку");
+		}
+		System.out.println("Ваш " + nameCoffe + " готов!");
 	}
 
 	public static void printFatalError() {
-		System.out.println("Произошла аварийная ситуация!" + "\nБак переполнен"
-				+ "\nУбедитесь, что количество кофе, молока или воды не превышает максимально допустимое значение!"
-				+ "\nПосле этого включите кофемашину и введите значения еще раз.");
-		Display.printParting();
+		System.out.println("\nПроизошла аварийная ситуация!" + "\nБак переполнен!"
+				+ "\nУбедитесь, что количество кофе, молока или воды не превышает максимально допустимое значение!");
 	}
 
+	public static void printToFinishWork() {
+		System.out.print("Завершить работу?\n Y/N\n > ");
+	}
+	
 	public static void printError(String error, Coffemachine coffemachine) {
 		Scanner scan = new Scanner(System.in);
 		char choose;
@@ -29,7 +43,6 @@ public abstract class Display {
 			System.out.println("Отсутствует молотый кофе!");
 			System.out.print("Вы засыпали кофе?\n Y/N" + "\n > ");
 			choose = scan.next().charAt(0);
-
 			if ('Y' == choose) {
 				System.out.print("Сколько вы засыпали?" + "\n > ");
 				coffemachine.setCurrentAmountOfGroundCoffee(scan.nextInt());
@@ -37,7 +50,7 @@ public abstract class Display {
 			break;
 		case "not enough water":
 			System.out.println("Отсутствует вода!");
-			System.out.println("Вы долили воды?\n Y/N \n >  ");
+			System.out.print("Вы долили воды?\n Y/N \n >  ");
 			choose = scan.next().charAt(0);
 			if ('Y' == choose) {
 				System.out.print("Сколько вы долили?" + "\n > ");
@@ -46,7 +59,7 @@ public abstract class Display {
 			break;
 		case "not enough milk":
 			System.out.println("Отсутствует молоко!");
-			System.out.println("Вы долили молока?\n Y/N \n >  ");
+			System.out.print("Вы долили молока?\n Y/N \n >  ");
 			choose = scan.next().charAt(0);
 			if ('Y' == choose) {
 				System.out.print("Сколько вы долили?" + "\n > ");
@@ -55,7 +68,7 @@ public abstract class Display {
 			break;
 		case "not enough beans coffee":
 			System.out.println("Отсутствуют зерны кофе!");
-			System.out.println("Вы долили зерна кофе?\n Y/N \n >  ");
+			System.out.print("Вы долили зерна кофе?\n Y/N \n >  ");
 			choose = scan.next().charAt(0);
 			if ('Y' == choose) {
 				System.out.print("Сколько вы долили?" + "\n > ");
@@ -69,27 +82,27 @@ public abstract class Display {
 	}
 
 	public static void printState(Coffemachine coffemachine) {
-		coffemachine.getCurrentAmountOfGroundCoffee();
-		System.out.printf("%nМолотый кофе: %8d гр. / %4d гр.", coffemachine.getCurrentAmountOfGroundCoffee(),
-				coffemachine.getMaxAmountOfGroundCoffee());
-		coffemachine.getCurrentAmountOfWater();
 		System.out.printf("%nВода: %16d мл. / %4d мл.", coffemachine.getCurrentAmountOfWater(),
 				coffemachine.getMaxAmountOfWater());
-		coffemachine.getCurrentAmountOfUsedCoffee();
+		System.out.printf("%nМолоко: %14d мл. / %4d мл.", coffemachine.getCurrentAmountOfMilk(),
+				coffemachine.getMaxAmountOfMilk());
+		System.out.printf("%nМолотый кофе: %8d гр. / %4d гр.", coffemachine.getCurrentAmountOfGroundCoffee(),
+				coffemachine.getMaxAmountOfGroundCoffee());
+		System.out.printf("%nЗерна кофе: %10d гр. / %4d гр.", coffemachine.getCurrentAmountOfBeansCoffee(),
+				coffemachine.getMaxAmountOfBeansCoffee());
 		System.out.printf("%nОтработанный кофе: %3d гр. / %4d гр.%n", coffemachine.getCurrentAmountOfUsedCoffee(),
 				coffemachine.getMaxAmountOfUsedCoffee());
-		coffemachine.getCurrentAmountOfMilk();
-		System.out.printf("%nМолоко: %16d мл. / %4d мл.", coffemachine.getCurrentAmountOfMilk(),
-				coffemachine.getMaxAmountOfMilk());
-		coffemachine.getCurrentAmountOfBeansCoffee();
-		System.out.printf("%nЗерна кофе: %16d гр. / %4d гр.", coffemachine.getCurrentAmountOfBeansCoffee(),
-				coffemachine.getMaxAmountOfBeansCoffee());
 	}
 
 	public static void printMenu() {
-		System.out.print("Выберите кнопку:" + "\n1■ Включить" + "\n2■ Выключить" + "\n3■ Приготовить эспрессо"
-				+ "\n4■ Приготовить американо" + "\n5■ Очистка бака отработанного кофе" + "\n6■ Приготовить латте"
-				+ "\n7■ Приготовить капучино" + "\n > ");
+		System.out.print("\nВыберите кнопку:" 
+				+ "\n1■ Включить"
+				+ "\n2■ Выключить" 
+//				+ "\n3■ Приготовить эспрессо"
+				+ "\n3■ Приготовить американо"
+//				+ "\n6■ Приготовить капучино"
+				+ "\n4■ Приготовить латте" 
+				+ "\n5■ Очистка бака отработанного кофе" + "\n > ");
 	}
 
 	public static void printInstructionsForLackOfCoffee() {
@@ -105,8 +118,8 @@ public abstract class Display {
 	}
 
 	public static void printInstructionsForLackOfBeansCoffee() {
-	
-	System.out.print("Засыпте в кофемашину зерна кофе и укажите количество"+"\n > ");
+
+		System.out.print("Засыпте в кофемашину зерна кофе и укажите количество" + "\n > ");
 
 	}
 
