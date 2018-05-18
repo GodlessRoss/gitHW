@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public abstract class Display {
 
+	static Scanner scan = new Scanner(System.in);
+	
 	public static void printGreating() {
 		System.out.println("Для выхода из программы дважды нажмите  ■ Выключить ");
 	}
@@ -35,7 +37,6 @@ public abstract class Display {
 	}
 	
 	public static void printError(String error, Coffemachine coffemachine) {
-		Scanner scan = new Scanner(System.in);
 		char choose;
 		System.out.println("Ошибка!");
 		switch (error) {
