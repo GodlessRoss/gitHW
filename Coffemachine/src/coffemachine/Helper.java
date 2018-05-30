@@ -2,7 +2,7 @@ package coffemachine;
 
 import java.util.Scanner;
 
-public abstract class Display {
+public class Helper {
 
 	static Scanner scan = new Scanner(System.in);
 	
@@ -12,11 +12,11 @@ public abstract class Display {
 
 	public static void printСoffeeMaking(String nameCoffe, boolean isHasFoat, int amountOfMilk) {
 		System.out.println("\nНачинаю готовить " + nameCoffe);
-		System.out.println("Добавляю " + MakingCoffee.NEED_AMOUNT_OF_GROUND_COFFE + " гр. кофе.");
+		System.out.println("Добавляю " + Coffe.AMOUNT_GROUND_COFFE + " гр. кофе.");
 		if ("американо".equals(nameCoffe)) {
-			System.out.println("Добавляю " + MakingAmericano.NEED_AMOUNT_OF_WATER + " мл. воды.");
+			System.out.println("Добавляю " + Coffe.AMERICANO_AMOUNT_OF_WATER + " мл. воды.");
 		} else {
-			System.out.println("Добавляю " + MakingEspresso.NEED_AMOUNT_OF_WATER + " мл. воды.");
+			System.out.println("Добавляю " + Coffe.ESPRESSO_AMOUNT_OF_WATER + " мл. воды.");
 		}
 		if (amountOfMilk > 0) {
 			System.out.println("Добовляю " + amountOfMilk + " мл. молока.");
