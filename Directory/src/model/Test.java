@@ -4,7 +4,12 @@ public class Test {
 
 	private String name;
 	private Question questions[];
+	private String tag;
 
+	public Test(Question questions[]) {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -28,6 +33,4 @@ public class Test {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
-
-	private String tag;
 }

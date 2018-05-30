@@ -8,6 +8,13 @@ public class Question {
 	private int countCorrect;
 	private String tag;
 
+	public Question(String name, String text, String correctAnswer, int countCorrect) {
+		this.name = name;
+		this.text = text;
+		this.correctAnswer = correctAnswer;
+		this.countCorrect = countCorrect;
+	}
+	
 	public String getName() {
 		return name;
 	}
