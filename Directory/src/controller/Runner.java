@@ -344,7 +344,8 @@ public class Runner {
 	}
 
 	private static void generateGUI() {
-
+		MainFrame mainFrame = new MainFrame();
+		mainFrame.setVisible(true);
 	}
 
 }
