@@ -27,8 +27,9 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Тело метода
-				
+				setVisible(false);
+				TestFrame newFrame = new TestFrame();
+				newFrame.setVisible(true);
 			}
 		});
 	}
