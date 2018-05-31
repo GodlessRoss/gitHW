@@ -17,13 +17,23 @@ public class MainFrame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Container container =  this.getContentPane();
-		container.setLayout(new GridLayout(3,2,2,2));
+		container.setLayout(new GridLayout(3,2,2,2));//
 		container.add(buttin);
 		container.add(buttin1);
 		container.add(buttin3);
 		container.add(buttin2);
+		buttin.addActionListener(new ButtonEventListener());
+	}
+	
+	class ButtonEventListener implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			
+			
+		}
 		
 	}
+	
+	
 	
 
 }
