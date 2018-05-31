@@ -217,18 +217,122 @@ public class Runner {
 						+ "\r\n"
 						+ "Г) переменная, которая должна быть инициализирована в месте объявления (или в конструкторе класса) и не может изменять своего значения на протяжении видимости этой переменной в коде;",
 				"Г", 1);
+		Question quest1Theme3 = new Question(
+				"Какие основные принципы содержит в себе классическая   парадигма объектно-ориентированного программирования?\r\n",
+				"1.	Инкапсуляция\r\n" + "2.	Наследование\r\n" + "3.	Полиморфизм\r\n" + "4.	Агрегирование\r\n"
+						+ "5.	Сокрытие\r\n" + "6.	Композиция\r\n" + "7.	Манипуляция\r\n" + "8.	Абстракция\r\n"
+						+ "9.	Внедрение зависимости\r\n",
+				"1" + "2" + "3" + "8", 4);
+		Question quest2Theme3 = new Question(
+				"Укажите какие ключевые слова могут быть использованы при объявлении переменных экземпляра (полей класса)?\r\n",
+				"1.	private\r\n" + "2.	public\r\n" + "3.	static\r\n" + "4.	final\r\n" + "5.	protected\r\n"
+						+ "6.	abstract\r\n",
+				"1" + "2" + "3" + "4" + "5", 4);
+		Question quest3Theme3 = new Question(
+				"Укажите какие ключевые слова могут быть использованы перед объявлением (не вложенного) класса?",
+				"1.	private\r\n" + "2.	public\r\n" + "3.	final\r\n" + "4.	protected\r\n" + "5.	abstract\r\n"
+						+ "6.	static\r\n" + "7.	package-private\r\n",
+				"2" + "3" + "5", 3);
+		Question quest4Theme3 = new Question("Членами класса называют:",
+				"1.	Все методы и поля класса\r\n" + "2.	Не статические методы и поля класса\r\n"
+						+ "3.	Только методы класса\r\n" + "4.	Только не статические поля класса\r\n"
+						+ "5.	Только статические методы и поля класса.",
+				"1", 1);
+		Question quest5Theme3 = new Question("Сеттеры (setters) это методы, которые",
+				"1.	Добавляют данные в объект\r\n" + "2.	Удаляют данные из объекта\r\n"
+						+ "3.	Изменяют атрибуты объекта\r\n" + "4.	Получают данные из объекта",
+				"5", 1);
+		Question quest6Theme3 = new Question("Какой из модификаторов доступа самый закрытый (жесткий)?",
+				"1.	protected\r\n" + "2.	default\r\n" + "3.	private\r\n" + "4.	public", "3", 1);
+		Question quest7Theme3 = new Question(
+				"Укажите какие ключевые слова могу использоваться перед объявлением метода в классе?",
+				"1.	private\r\n" + "2.	public\r\n" + "3.	protected\r\n" + "4.	final\r\n" + "5.	static\r\n"
+						+ "6.	abstract\r\n" + "7.	native\r\n" + "8.	instanceof\r\n" + "9.	var\r\n"
+						+ "10.	const\r\n" + "11.	strictfp",
+				"1" + "2" + "3" + "4" + "5" + "6" + "7", 7);
+		Question quest8Theme3 = new Question("Наследуются ли поля класса имеющие модификатор private?",
+				"1.	Да\r\n" + "2.	Нет\r\n" + "3.	Только если они имеют геттеры", "3", 1);
+		Question quest9Theme3 = new Question("Объекты каких типов можно создать без оператора new?",
+				"1.	StringBuilder\r\n" + "2.	Object\r\n" + "3.	Integer\r\n" + "4.	массив\r\n" + "5.	String",
+				"3" + "4" + "5", 3);
+		Question quest10Theme3 = new Question("От какого класса неявно наследуются все классы в java?", "1.	Class\r\n"
+				+ "2.	String\r\n" + "3.	Bog\r\n" + "4.	God\r\n" + "5.	Object\r\n" + "6.	Product", "5", 1);
+		Question quest11Theme3 = new Question(
+				"Какой модификатор доступа у метода в интерфейсе, если не указывать модификатор явно?",
+				"1.	private\r\n" + "2.	package-private\r\n" + "3.	public\r\n" + "4.	protected", "3", 1);
+		Question quest12Theme3 = new Question(
+				"Какое ключевое слово неявно присутствует в объявление методов интерфейса?",
+				"1.	static\r\n" + "2.	abstract\r\n" + "3.	final\r\n" + "4.	protected", "2", 1);
+		Question quest13Theme3 = new Question(
+				"Какое ключевое слово используется для указания, что класс реализует интерфейс?",
+				"1.	realize\r\n" + "2.	extends\r\n" + "3.	implements\r\n" + "4.	instanceof\r\n" + "", "3", 1);
+		Question quest14Theme3 = new Question("Укажите только верные утверждения.",
+				"1.	Класс может наследоваться только от одного класса..\r\n"
+						+ "2.	Класс может реализовать несколько интерфейсов.\r\n"
+						+ "3.	Интерфейс может наследоваться от класса\r\n"
+						+ "4.	Абстрактный класс может наследоваться от интерфейса\r\n"
+						+ "5.	Интерфейс может быть унаследован (расширен)  другим интерфейсом.\r\n"
+						+ "6.	Класс может наследовать интерфейс\r\n"
+						+ "7.	Класс может наследоваться от одного класса и одновременно реализовывать несколько интерфейсов.",
+				"1" + "2" + "5" + "7", 4);
+		Question quest15Theme3 = new Question(
+				"Каким образом можно запретить наследование класса (речь идет о не вложенных классах) ?",
+				"1.	Добавить модификатор abstract\r\n" + "2.	Добавить модификатор final\r\n"
+						+ "3.	Добавить модификатор private\r\n" + "4.	Не определять конструктор\r\n"
+						+ "5.	Объявить все конструкторы класса c спецификатором доступа private\r\n"
+						+ "6.	Запретить наследование нельзя",
+				"1", 1);
+		Question quest16Theme3 = new Question("Можно ли объявить конструктор в интерфейсе?",
+				"1.	Да\r\n" + "2.	Нет\r\n" + "3.	Да,  но только если сделать конструктор абстрактным.", "2", 1);
+		Question quest17Theme3 = new Question("Можно ли наследоваться от класса java.lang.String?",
+				"1.	Да\r\n" + "2.	Нет\r\n" + "3.	Не в курсе", "2", 1);
+		Question quest18Theme3 = new Question(
+				"Какие модификаторы позволяют обращаться к полю/методу публичного класса верхнего уровня из других классов верхнего уровня, находящихся в том же пакете?",
+				"1.	по умолчанию (package-private)\r\n" + "2.	protected\r\n" + "3.	public\r\n" + "4.	private",
+				"1" + "2" + "3", 3);
+		Question quest19Theme3 = new Question(
+				"Можно ли переопределяя метод изменить его модификатор доступа с \"package-private\" на \"protected\"?",
+				"1.	Да\r\n" + "2.	Нет\r\n" + "3.	Не в курсе", "2", 1);
+		Question quest20Theme3 = new Question("Какие из следующих утверждений истинные?",
+				"1.	Абстрактный метод не может быть статическим\r\n"
+						+ "2.	Не статический метод не может быть вызван из статического без указания экземпляра класса\r\n"
+						+ "3.	Статический метод не может быть вызван из не статического метода\r\n"
+						+ "4.	private метод не может быть вызван из другого метода этого класса\r\n"
+						+ "5.	final метод не может быть статическим",
+				"1" + "3", 2);
+		Question quest21Theme3 = new Question("Что такое this в java.",
+				"1.	Неявная ссылка в не статическом методе на объект класса для которого был вызван метод.\r\n"
+						+ "2.	Неявная ссылка в  методе на объект класса который вызвал  метод.\r\n"
+						+ "3.	Явная ссылка на переменную экземпляра\r\n" + "4.	Название переменной класса",
+				"1", 1);
+		Question quest22Theme3 = new Question("В каких случаях в классе присутствует конструктор по умолчанию?",
+				"1.	Если в классе не объявлены конструкторы.\r\n"
+						+ "2.	Если конструктор по умолчанию явно объявлен в классе.\r\n"
+						+ "3.	Всегда присутствует.\r\n" + "4.	Только если явно объявлен в классе.",
+				"1", 1);
+		Question quest23Theme3 = new Question("Для чего применяется оператор instanceof?",
+				"1.	Чтобы проверить, соответствует ли текущее значение переменной указанному типу,\r\n"
+						+ "2.	Чтобы проверить инстанцирован ли объект в переменной.\r\n"
+						+ "3.	Чтобы определить тип переменной",
+				"3", 1);
 
 		Question[] questionsTheme1 = { quest1Theme1, quest2Theme1, quest3Theme1, quest4Theme1, quest5Theme1,
 				quest6Theme1, quest7Theme1, quest8Theme1 };
 		Question[] questionsTheme2 = { quest1Theme2, quest2Theme2, quest3Theme2, quest4Theme2, quest5Theme2,
 				quest6Theme2, quest7Theme2, quest8Theme2, quest9Theme2, quest10Theme2, quest11Theme2, quest12Theme2,
 				quest13Theme2, quest14Theme2, quest15Theme2, quest16Theme2, quest17Theme2, quest18Theme2, quest19Theme2,
-				quest20Theme2, quest21Theme2, quest22Theme2, quest23Theme2, quest24Theme2, quest25Theme2, quest26Theme2 };
+				quest20Theme2, quest21Theme2, quest22Theme2, quest23Theme2, quest24Theme2, quest25Theme2,
+				quest26Theme2 };
+		Question[] questionsTheme3 = { quest1Theme3, quest2Theme3, quest3Theme3, quest4Theme3, quest5Theme3,
+				quest6Theme3, quest7Theme3, quest8Theme3, quest9Theme3, quest10Theme3, quest11Theme3, quest12Theme3,
+				quest13Theme3, quest14Theme3, quest15Theme3, quest16Theme3, quest17Theme3, quest18Theme3, quest19Theme3,
+				quest20Theme3, quest21Theme3, quest22Theme3, quest23Theme3 };
 
 		Test testTheme1 = new Test(questionsTheme1);
 		Test testTheme2 = new Test(questionsTheme2);
+		Test testTheme3 = new Test(questionsTheme3);
 
-		Test[] tests = { testTheme1, testTheme2 };
+		Test[] tests = { testTheme1, testTheme2, testTheme3 };
 		return tests;
 
 	}
