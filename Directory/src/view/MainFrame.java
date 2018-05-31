@@ -1,10 +1,10 @@
 package view;
 
-public class MainFrame {
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class MainFrame extends JFrame {
 
-	}
 
 }
