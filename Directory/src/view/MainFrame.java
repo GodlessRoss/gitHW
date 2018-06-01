@@ -27,8 +27,8 @@ public class MainFrame extends JFrame {
 	private int counter = 1;
 	private JLabel lblNewLabel;
 	private JScrollPane addTestScrollPane;
-	private JList addTestList;
 	private JButton btnX;
+	private JTextArea addTestTextArea;
 
 	/**
 	 * Create the application.
@@ -60,8 +60,8 @@ public class MainFrame extends JFrame {
 				DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) themeTree.getLastSelectedPathComponent();
 				if (selectedNode != null) {
 					Object selectedObj = selectedNode.getUserObject().toString();
-					if (addTestList.getModel().toString().indexOf(selectedObj.toString()) == -1) {
-						addTestList.setModel(DefaultListModel<(counter++ + ". " + selectedObj.toString() + ";")>);
+					if (addTestTextArea.getText().toString().indexOf(selectedObj.toString()) == -1) {
+						addTestTextArea.setText((addTestTextArea.getText().toString() + counter++ + ". " + selectedObj.toString() + ";"));
 					}
 				}
 			}
@@ -113,17 +113,8 @@ public class MainFrame extends JFrame {
 					.addContainerGap())
 		);
 		
-		addTestList = new JList();
-		addTestList.setModel(new AbstractListModel() {
-			String[] values = new String[] {};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		addTestScrollPane.setViewportView(addTestList);
+		addTestTextArea = new JTextArea();
+		addTestScrollPane.setViewportView(addTestTextArea);
 
 		themeTextArea = new JTextArea();
 		themeScrollPane.setViewportView(themeTextArea);
@@ -147,8 +138,8 @@ public class MainFrame extends JFrame {
 				node_1.add(new DefaultMutableTreeNode("Инсталляция платформы Java"));
 				node_1.add(new DefaultMutableTreeNode("Пример написания первого приложения"));
 				node_1.add(new DefaultMutableTreeNode("Обзор существующих IDE"));
-				getContentPane().add(node_1);
-				getContentPane().add(new DefaultMutableTreeNode("ООП"));
+				add(node_1);
+				add(new DefaultMutableTreeNode("ООП"));
 			}
 		}));
 
