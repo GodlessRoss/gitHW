@@ -27,14 +27,15 @@ public class MainFrame extends JFrame {
 	private int counter = 1;
 	private JLabel lblNewLabel;
 	private JScrollPane addTestScrollPane;
-	private JTextArea addTestTextArea;
+	private JList addTestList;
+	private JButton btnX;
 
 	/**
 	 * Create the application.
 	 */
 	public MainFrame() {
 		getContentPane().setBackground(Color.WHITE);
-		setBounds(100, 100, 587, 281);
+		setBounds(100, 100, 587, 345);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		scrollPaneTree = new JScrollPane();
@@ -58,10 +59,9 @@ public class MainFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) themeTree.getLastSelectedPathComponent();
 				if (selectedNode != null) {
-					String selectedObj = selectedNode.getUserObject().toString();
-					if (addTestTextArea.getText().indexOf(selectedObj) == -1) {
-						addTestTextArea
-								.setText(addTestTextArea.getText() + counter++ + ". " + selectedObj.toString() + ";\n");
+					Object selectedObj = selectedNode.getUserObject().toString();
+					if (addTestList.getModel().toString().indexOf(selectedObj.toString()) == -1) {
+						addTestList.setModel(DefaultListModel<(counter++ + ". " + selectedObj.toString() + ";")>);
 					}
 				}
 			}
@@ -70,42 +70,60 @@ public class MainFrame extends JFrame {
 		lblNewLabel = new JLabel("Выбранные тесты");
 
 		addTestScrollPane = new JScrollPane();
+		
+		btnX = new JButton("X");
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
-		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-						.addComponent(scrollPaneTree, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(separator, GroupLayout.PREFERRED_SIZE, 6, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(themeScrollPane, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false).addComponent(lblNewLabel)
-								.addComponent(addTestButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE)
-								.addComponent(runTestButton).addComponent(addTestScrollPane))
-						.addContainerGap()));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup().addContainerGap()
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(themeScrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 220,
-										Short.MAX_VALUE)
-								.addGroup(groupLayout.createSequentialGroup().addComponent(lblNewLabel)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(addTestScrollPane, GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(runTestButton)
-										.addGap(7).addComponent(addTestButton))
-								.addComponent(separator, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 220,
-										Short.MAX_VALUE)
-								.addComponent(scrollPaneTree, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 220,
-										Short.MAX_VALUE))
-						.addContainerGap()));
-
-		addTestTextArea = new JTextArea();
-		addTestTextArea.setWrapStyleWord(true);
-		addTestTextArea.setLineWrap(true);
-		addTestTextArea.setEditable(false);
-		addTestTextArea.setBackground(Color.WHITE);
-		addTestScrollPane.setViewportView(addTestTextArea);
+					.addComponent(scrollPaneTree, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(separator, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(themeScrollPane, GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(lblNewLabel)
+						.addComponent(addTestButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(runTestButton)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnX))
+						.addComponent(addTestScrollPane, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(themeScrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+						.addComponent(separator, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblNewLabel)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(addTestScrollPane, GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(runTestButton)
+								.addComponent(btnX))
+							.addGap(7)
+							.addComponent(addTestButton))
+						.addComponent(scrollPaneTree, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		
+		addTestList = new JList();
+		addTestList.setModel(new AbstractListModel() {
+			String[] values = new String[] {};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		addTestScrollPane.setViewportView(addTestList);
 
 		themeTextArea = new JTextArea();
 		themeScrollPane.setViewportView(themeTextArea);
@@ -129,8 +147,8 @@ public class MainFrame extends JFrame {
 				node_1.add(new DefaultMutableTreeNode("Инсталляция платформы Java"));
 				node_1.add(new DefaultMutableTreeNode("Пример написания первого приложения"));
 				node_1.add(new DefaultMutableTreeNode("Обзор существующих IDE"));
-				 add(node_1);
-				 add(new DefaultMutableTreeNode("ООП"));
+				getContentPane().add(node_1);
+				getContentPane().add(new DefaultMutableTreeNode("ООП"));
 			}
 		}));
 
