@@ -28,7 +28,7 @@ public class MainFrame extends JFrame {
 	 */
 	public MainFrame() {
 		getContentPane().setBackground(Color.WHITE);
-		setBounds(100, 100, 587, 274);
+		setBounds(100, 100, 587, 281);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JScrollPane scrollPaneTree = new JScrollPane();
