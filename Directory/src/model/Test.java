@@ -7,9 +7,9 @@ public class Test {
 	private String tag;
 
 	public Test(Question questions[]) {
-		
+
 	}
-	
+
 	public String getName() {
 		return name;
 	}

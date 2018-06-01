@@ -25,20 +25,27 @@ public final class Helper {
 		return "Ошибка чтения";
 	}
 
-	public static Test какоетоНазваниеМетода(String name) {
-		Question[] quest;
+	public static Test getTests(String name) {
 		for (Test test : tests) {
-			if (name != null && name.equals(test.getQuestions())) {
-				quest = test.getQuestions();
-				for (Question questmads : quest) {
-					questmads.getName();
-					questmads.getText();
-					String prav = questmads.getCorrectAnswer();
-					
-				}
+			if (name != null && name.equals(test.getName())) {
 				return test;
 			}
 		}
 		return null;
 	}
+
+	// public static Test какоетоНазваниеМетода(String name) {
+	// Question[] quest;
+	// for (Test test : tests) {
+	// if (name != null && name.equals(test.getQuestions())) {
+	// quest = test.getQuestions();
+	// for (Question questmads : quest) {
+	// questmads.getName();
+	// questmads.getText();
+	// String prav = questmads.getCorrectAnswer();
+	// return test;
+	// }
+	// }
+	// return null;
+	// }
 }

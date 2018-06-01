@@ -1,7 +1,6 @@
 package controller;
 
 import model.*;
-import controller.*;
 import view.*;
 
 public class Runner {

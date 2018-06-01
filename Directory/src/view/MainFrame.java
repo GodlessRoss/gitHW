@@ -2,16 +2,18 @@ package view;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.StringTokenizer;
+
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.tree.DefaultTreeModel;
-
-import controller.Helper;
-
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+
+import controller.Helper;
+import model.Test;
 
 public class MainFrame extends JFrame {
 
@@ -47,22 +49,31 @@ public class MainFrame extends JFrame {
 		separator.setBackground(Color.BLACK);
 
 		themeScrollPane = new JScrollPane();
-		
 
 		runTestButton = new JButton("Начать тест");
 		runTestButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (e.getSource() == runTestButton) {
-					TestFrame testFrame = new TestFrame();
-					
-
+			public void actionPerformed(ActionEvent event) {
+				String[] listTheme = new String[--counter];
+				StringTokenizer tokenizer = new StringTokenizer(addTestTextArea.getText(), ";");
+				int i = 0;
+				while (tokenizer.hasMoreTokens()) {
+					String word = tokenizer.nextToken();
+					listTheme[i++] = word;
 				}
+				
+				Test[] tests = new Test[--counter];
+				for (i = 0; i < tests.length; i++) {
+					tests[i] = Helper.getTests(listTheme[i]);
+				}
+				TestFrame testFrame = new TestFrame(tests);
+				setVisible(false);
+				testFrame.setVisible(true);
 			}
 		});
 
 		addTestButton = new JButton("Добавить в список");
 		addTestButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent event) {
 				DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) themeTree.getLastSelectedPathComponent();
 				if (selectedNode != null) {
 					Object selectedObj = selectedNode.getUserObject().toString();
