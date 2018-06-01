@@ -6,6 +6,11 @@ public class Theme {
 	private String text;
 	private String tag;
 
+	public Theme(String name, String text) {
+		this.name = name;
+		this.text = text;
+	}
+
 	public String getName() {
 		return name;
 	}
