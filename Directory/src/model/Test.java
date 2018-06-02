@@ -1,13 +1,16 @@
 package model;
 
+import java.util.Arrays;
+
 public class Test {
 
 	private String name;
 	private Question questions[];
 	private String tag;
 
-	public Test(Question questions[]) {
-
+	public Test(String name, Question questions[]) {
+		this.name = name;
+		this.questions = questions;
 	}
 
 	public String getName() {
@@ -33,4 +36,10 @@ public class Test {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
+
+	@Override
+	public String toString() {
+		return "Test [name=" + name + ", questions=" + Arrays.toString(questions) + ", tag=" + tag + "]";
+	}
+
 }

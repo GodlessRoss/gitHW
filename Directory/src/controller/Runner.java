@@ -437,9 +437,9 @@ public class Runner {
 				quest13Theme3, quest14Theme3, quest15Theme3, quest16Theme3, quest17Theme3, quest18Theme3, quest19Theme3,
 				quest20Theme3, quest21Theme3, quest22Theme3, quest23Theme3 };
 
-		Test testTheme1 = new Test(questionsTheme1);
-		Test testTheme2 = new Test(questionsTheme2);
-		Test testTheme3 = new Test(questionsTheme3);
+		Test testTheme1 = new Test("Введение в технологию Java", questionsTheme1);
+		Test testTheme2 = new Test("", questionsTheme2);
+		Test testTheme3 = new Test("ООП", questionsTheme3);
 
 		Test[] tests = { testTheme1, testTheme2, testTheme3 };
 		return tests;

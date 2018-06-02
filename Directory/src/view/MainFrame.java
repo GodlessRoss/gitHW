@@ -53,21 +53,46 @@ public class MainFrame extends JFrame {
 		runTestButton = new JButton("Начать тест");
 		runTestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				String[] listTheme = new String[--counter];
-				StringTokenizer tokenizer = new StringTokenizer(addTestTextArea.getText(), ";");
-				int i = 0;
-				while (tokenizer.hasMoreTokens()) {
-					String word = tokenizer.nextToken();
-					listTheme[i++] = word;
+				DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) themeTree.getLastSelectedPathComponent();
+				if (!addTestTextArea.getText().equals("")) {
+					String[] listTheme = new String[counter - 1];
+					StringTokenizer tokenizer = new StringTokenizer(addTestTextArea.getText(), ";");
+					int i = 0;
+					StringBuilder word = new StringBuilder("");
+					while (tokenizer.hasMoreTokens()) {
+						word.append(tokenizer.nextToken());
+						if (word.length() > 1) {
+							int index = word.indexOf(" ");
+							if (index != -1) {
+								word.delete(0, index + 1);
+							}
+							index = word.indexOf("\n");
+							if (index != -1) {
+								word.delete(index, index + 2);
+							}
+							listTheme[i++] = word.toString();
+						}
+						word.delete(0, word.length() + 1);
+					}
+
+					Test[] tests = new Test[counter - 1];
+					for (i = 0; i < tests.length; i++) {
+						tests[i] = Helper.getTests(listTheme[i]);
+					}
+					TestFrame testFrame = new TestFrame(tests);
+					setVisible(false);
+					testFrame.setVisible(true);
+				} else if (selectedNode != null) {
+					Object selectedObj = selectedNode.getUserObject().toString();
+					Test[] theme = new Test[1];
+					theme[0] = Helper.getTests(selectedObj.toString());
+					TestFrame testFrame = new TestFrame(theme);
+					setVisible(false);
+					testFrame.setVisible(true);
+				} else if (selectedNode == null) {
+					JOptionPane.showMessageDialog(null, "Выберите хотя бы один раздел!", "Ошибка!",
+							JOptionPane.PLAIN_MESSAGE);
 				}
-				
-				Test[] tests = new Test[--counter];
-				for (i = 0; i < tests.length; i++) {
-					tests[i] = Helper.getTests(listTheme[i]);
-				}
-				TestFrame testFrame = new TestFrame(tests);
-				setVisible(false);
-				testFrame.setVisible(true);
 			}
 		});
 
@@ -79,7 +104,7 @@ public class MainFrame extends JFrame {
 					Object selectedObj = selectedNode.getUserObject().toString();
 					if (addTestTextArea.getText().toString().indexOf(selectedObj.toString()) == -1) {
 						addTestTextArea.setText((addTestTextArea.getText().toString() + counter++ + ". "
-								+ selectedObj.toString() + ";"));
+								+ selectedObj.toString() + ";\n"));
 					}
 				}
 			}

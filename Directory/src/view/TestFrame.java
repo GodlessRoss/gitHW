@@ -2,1404 +2,1128 @@ package view;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
+
 import javax.swing.*;
 
 import model.Test;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class TestFrame extends JFrame{
-<<<<<<< HEAD
+public class TestFrame extends JFrame {
 	private JTextField answTextField_1;
-=======
-	private JTextField textField_5;
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
+	private JTextField answTextField_2;
+	private JTextField answTextField_3;
+	private JTextField answTextField_4;
+	private JTextField answTextField_5;
+	private JTextField answTextField_6;
+	private JTextField answTextField_7;
+	private JTextField answTextField_8;
+	private JTextField answTextField_9;
+	private JTextField answTextField_10;
+	private JTextField answTextField_11;
+	private JTextField answTextField_12;
 	private JPanel testPanel_1;
 	private JLabel themesLabel_1;
 	private JLabel themeLabel_1;
 	private JLabel nameQuestLabel_1;
 	private JLabel answLabel_1;
-	private JTextArea textQuestTextArea;
+	private JTextArea textQuestTextArea_1;
 	private JButton backButton_1;
-	private JButton enterButton;
+	private JButton enterButton_1;
 	private JButton nextButton_1;
-	
+	private JPanel testPanel_2;
+	private JLabel themesLabel_2;
+	private JLabel themeLabel_2;
+	private JLabel nameQuestLabel;
+	private JTextArea textQuestTextArea_2;
+	private JLabel answLabel_2;
+	private JButton enterButton_2;
+	private JButton backButton_2;
+	private JButton nextButton_2;
+	private JPanel testPanel_3;
+	private JLabel themesLabel_3;
+	private JLabel themeLabel_3;
+	private JLabel nameQuestLabel_3;
+	private JTextArea textQuestTextArea_3;
+	private JLabel answLabel_3;
+	private JButton enterButton_3;
+	private JButton backButton_3;
+	private JButton nextButton_3;
+	private JPanel testPanel_4;
+	private JLabel themesLabel_4;
+	private JLabel themeLabel_4;
+	private JLabel nameQuestLabel_4;
+	private JTextArea textQuestTextArea_4;
+	private JButton enterButton_4;
+	private JButton backButton_4;
+	private JButton nextButton_4;
+	private JPanel testPanel_5;
+	private JLabel themesLabel_5;
+	private JLabel themeLabel_5;
+	private JLabel nameQuestLabel_5;
+	private JTextArea textQuestTextArea_5;
+	private JLabel answLabel_5;
+	private JButton enterButton_5;
+	private JButton backButton_5;
+	private JButton nextButton_5;
+	private JPanel testPanel_6;
+	private JLabel themesLabel_6;
+	private JLabel themeLabel_6;
+	private JLabel nameQuestLabel_6;
+	private JTextArea textQuestTextArea_6;
+	private JLabel answLabel_6;
+	private JButton enterButton_6;
+	private JButton backButton_6;
+	private JButton nextButton_6;
+	private JPanel testPanel_7;
+	private JLabel themesLabel_7;
+	private JLabel themeLabel_7;
+	private JLabel nameQuestLabel_7;
+	private JTextArea textQuestTextArea_7;
+	private JLabel answLabel_7;
+	private JButton enterButton_7;
+	private JButton backButton_7;
+	private JButton nextButton_7;
+	private JPanel testPanel_8;
+	private JLabel themesLabel_8;
+	private JLabel themeLabel_8;
+	private JLabel nameQuestLabel_8;
+	private JTextArea textQuestTextArea_8;
+	private JLabel answLabel_8;
+	private JButton enterButton_8;
+	private JButton backButton_8;
+	private JButton nextButton_8;
+	private JPanel testPanel_9;
+	private JLabel themesLabel_9;
+	private JLabel themeLabel_9;
+	private JLabel nameQuestLabel_9;
+	private JTextArea textQuestTextArea_9;
+	private JLabel answLabel_9;
+	private JButton enterButton_9;
+	private JButton backButton_9;
+	private JButton nextButton_9;
+	private JPanel testPanel_10;
+	private JLabel themesLabel_10;
+	private JLabel themeLabel_10;
+	private JLabel nameQuestLabel_10;
+	private JTextArea textQuestTextArea_10;
+	private JLabel answLabel_10;
+	private JButton enterButton_10;
+	private JButton backButton_10;
+	private JButton nextButton_10;
+	private JPanel testPanel_11;
+	private JLabel themesLabel_11;
+	private JLabel themeLabel_11;
+	private JLabel nameQuestLabel_11;
+	private JTextArea textQuestTextArea_11;
+	private JLabel answLabel_11;
+	private JButton enterButton_11;
+	private JButton backButton_11;
+	private JButton nextButton_11;
+	private JPanel testPanel_12;
+	private JLabel themesLabel_12;
+	private JLabel themeLabel_12;
+	private JLabel nameQuestLabel_12;
+	private JTextArea textQuestTextArea_12;
+	private JLabel answLabel_12;
+	private JButton enterButton_12;
+	private JButton backButton_12;
+	private JButton nextButton_12;
+
 	public TestFrame(Test[] tests) {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowOpened(WindowEvent event) {
+				for (int j = 0; j < tests.length; j++) {
+					String message = tests[j].toString();
+					JOptionPane.showMessageDialog(null, message, "Це работает", JOptionPane.PLAIN_MESSAGE);
+				}
+
+			}
+		});
 		getContentPane().setEnabled(false);
 		setBounds(100, 100, 767, 414);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
-		
+
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		getContentPane().add(tabbedPane);
-		
-<<<<<<< HEAD
+
 		testPanel_1 = new JPanel();
 		testPanel_1.setBackground(Color.WHITE);
 		tabbedPane.addTab("New tab", null, testPanel_1, null);
-		
+
 		themesLabel_1 = new JLabel();
 		themesLabel_1.setToolTipText("");
 		themesLabel_1.setText("Тест по следующим темам:");
-		
+
 		themeLabel_1 = new JLabel("За себя и за Сашку?");
-		
+
 		nameQuestLabel_1 = new JLabel("New label");
-		
+
 		answLabel_1 = new JLabel("Введите ответ:");
-		
+
 		answTextField_1 = new JTextField();
 		answTextField_1.setColumns(10);
-		
-		enterButton = new JButton("Ввод");
-		
+
+		enterButton_1 = new JButton("Ввод");
+
 		backButton_1 = new JButton("Назад");
-		
+
 		nextButton_1 = new JButton("Вперед");
-		
-		textQuestTextArea = new JTextArea();
-		textQuestTextArea.setWrapStyleWord(true);
-		textQuestTextArea.setLineWrap(true);
-		textQuestTextArea.setEditable(false);
-		textQuestTextArea.setBackground(Color.WHITE);
+
+		textQuestTextArea_1 = new JTextArea();
+		textQuestTextArea_1.setWrapStyleWord(true);
+		textQuestTextArea_1.setLineWrap(true);
+		textQuestTextArea_1.setEditable(false);
+		textQuestTextArea_1.setBackground(Color.WHITE);
 		GroupLayout gl_testPanel_1 = new GroupLayout(testPanel_1);
-		gl_testPanel_1.setHorizontalGroup(
-			gl_testPanel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_testPanel_1.createSequentialGroup()
-					.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_testPanel_1.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING)
-								.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
+		gl_testPanel_1.setHorizontalGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_1
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_1
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
 								.addComponent(themeLabel_1, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_testPanel_1.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING)
-								.addComponent(textQuestTextArea, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_testPanel_1.createSequentialGroup()
-									.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(answTextField_1)
-									.addGap(18)
-									.addComponent(enterButton, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(backButton_1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(nextButton_1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_testPanel_1.setVerticalGroup(
-			gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_testPanel_1.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(themeLabel_1)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textQuestTextArea, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING)
+								.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_1.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_1, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_1.createSequentialGroup()
+														.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_1).addGap(18)
+														.addComponent(enterButton_1, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_1, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_1, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_1.setVerticalGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_1
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_1)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_1, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING)
 						.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_testPanel_1.createParallelGroup(Alignment.BASELINE)
-								.addComponent(backButton_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(enterButton)
-								.addComponent(answTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(nextButton_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(232))
-		);
+								.addGroup(gl_testPanel_1.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_1)
+										.addComponent(answTextField_1, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
 		testPanel_1.setLayout(gl_testPanel_1);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel, null);
-		
-		JLabel label = new JLabel();
-		label.setToolTipText("");
-		label.setText("Тест по следующим темам:");
-		
-		JLabel label_1 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_2 = new JLabel("New label");
-		
-		JTextArea textArea = new JTextArea();
-		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setWrapStyleWord(true);
-		textArea_1.setLineWrap(true);
-		textArea_1.setEditable(false);
-		textArea_1.setBackground(Color.WHITE);
-		
-		JLabel label_3 = new JLabel("Введите ответ:");
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		
-		JButton button = new JButton("Ввод");
-		
-		JButton button_1 = new JButton("Назад");
-		
-		JButton button_2 = new JButton("Вперед");
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(label, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel.createSequentialGroup()
-									.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField)
-									.addGap(18)
-									.addComponent(button, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_1)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-=======
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_5, null);
-		
-		JLabel label_19 = new JLabel();
-		label_19.setToolTipText("");
-		label_19.setText("Тест по следующим темам:");
-		
-		JLabel label_20 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_21 = new JLabel("New label");
-		
-		JLabel label_22 = new JLabel("Введите ответ:");
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		
-		JButton button_15 = new JButton("Ввод");
-		
-		JButton button_16 = new JButton("Назад");
-		
-		JButton button_17 = new JButton("Вперед");
-		
-		JTextArea textArea_10 = new JTextArea();
-		textArea_10.setWrapStyleWord(true);
-		textArea_10.setLineWrap(true);
-		textArea_10.setEditable(false);
-		textArea_10.setBackground(Color.WHITE);
-		
-		JTextArea textArea_11 = new JTextArea();
-		GroupLayout gl_panel_5 = new GroupLayout(panel_5);
-		gl_panel_5.setHorizontalGroup(
-			gl_panel_5.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_5.createSequentialGroup()
-					.addGroup(gl_panel_5.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_5.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_5.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_19, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_20, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_21, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_5.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_5.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_5.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_10, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_5.createSequentialGroup()
-									.addComponent(label_22, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_5)
-									.addGap(18)
-									.addComponent(button_15, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_16, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_17, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_5.setVerticalGroup(
-			gl_panel_5.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel_5.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_19, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_20)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_21, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_10, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_5.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_5.createSequentialGroup()
-							.addComponent(label_22, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_11, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_5.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_5.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_16, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_15)
-								.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_17, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_5.setLayout(gl_panel_5);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel, null);
-		
-		JLabel label = new JLabel();
-		label.setToolTipText("");
-		label.setText("Тест по следующим темам:");
-		
-		JLabel label_1 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_2 = new JLabel("New label");
-		
-		JTextArea textArea = new JTextArea();
-		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setWrapStyleWord(true);
-		textArea_1.setLineWrap(true);
-		textArea_1.setEditable(false);
-		textArea_1.setBackground(Color.WHITE);
-		
-		JLabel label_3 = new JLabel("Введите ответ:");
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		
-		JButton button = new JButton("Ввод");
-		
-		JButton button_1 = new JButton("Назад");
-		
-		JButton button_2 = new JButton("Вперед");
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(label, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel.createSequentialGroup()
-									.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField)
-									.addGap(18)
-									.addComponent(button, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_1)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_1, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		panel.setLayout(gl_panel);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_1, null);
-		
-		JLabel label_4 = new JLabel();
-		label_4.setToolTipText("");
-		label_4.setText("Тест по следующим темам:");
-		
-		JLabel label_5 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_6 = new JLabel("New label");
-		
-		JTextArea textArea_2 = new JTextArea();
-		
-		JTextArea textArea_3 = new JTextArea();
-		textArea_3.setWrapStyleWord(true);
-		textArea_3.setLineWrap(true);
-		textArea_3.setEditable(false);
-		textArea_3.setBackground(Color.WHITE);
-		
-		JLabel label_7 = new JLabel("Введите ответ:");
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		
-		JButton button_3 = new JButton("Ввод");
-		
-		JButton button_4 = new JButton("Назад");
-		
-		JButton button_5 = new JButton("Вперед");
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_6, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_3, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_1.createSequentialGroup()
-									.addComponent(label_7, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_1)
-									.addGap(18)
-									.addComponent(button_3, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_4, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_5)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_6, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_3, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(label_7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_2, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_3)
-								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_1.setLayout(gl_panel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_2, null);
-		
-		JLabel label_8 = new JLabel();
-		label_8.setToolTipText("");
-		label_8.setText("Тест по следующим темам:");
-		
-		JLabel label_9 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_10 = new JLabel("New label");
-		
-		JTextArea textArea_4 = new JTextArea();
-		
-		JTextArea textArea_5 = new JTextArea();
-		textArea_5.setWrapStyleWord(true);
-		textArea_5.setLineWrap(true);
-		textArea_5.setEditable(false);
-		textArea_5.setBackground(Color.WHITE);
-		
-		JLabel label_11 = new JLabel("Введите ответ:");
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		
-		JButton button_6 = new JButton("Ввод");
-		
-		JButton button_7 = new JButton("Назад");
-		
-		JButton button_8 = new JButton("Вперед");
-		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
-		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_8, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_9, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_10, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_5, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_2.createSequentialGroup()
-									.addComponent(label_11, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_2)
-									.addGap(18)
-									.addComponent(button_6, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_7, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_8, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_8, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_9)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_10, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_5, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-=======
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_9)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_10, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_5, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_2.createSequentialGroup()
-							.addComponent(label_11, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_4, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_6)
-								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_2.setLayout(gl_panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_3, null);
-		
-		JLabel label_12 = new JLabel();
-		label_12.setToolTipText("");
-		label_12.setText("Тест по следующим темам:");
-		
-		JLabel label_13 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_14 = new JLabel("New label");
-		
-		JTextArea textArea_6 = new JTextArea();
-		
-		JTextArea textArea_7 = new JTextArea();
-		textArea_7.setWrapStyleWord(true);
-		textArea_7.setLineWrap(true);
-		textArea_7.setEditable(false);
-		textArea_7.setBackground(Color.WHITE);
-		
-		JLabel label_15 = new JLabel("Введите ответ:");
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		
-		JButton button_9 = new JButton("Ввод");
-<<<<<<< HEAD
-		
-		JButton button_10 = new JButton("Назад");
-		
-=======
-		
-		JButton button_10 = new JButton("Назад");
-		
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		JButton button_11 = new JButton("Вперед");
-		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
-		gl_panel_3.setHorizontalGroup(
-			gl_panel_3.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_3.createSequentialGroup()
-					.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_3.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_12, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_13, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_14, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_3.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_3.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_7, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_3.createSequentialGroup()
-									.addComponent(label_15, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_3)
-									.addGap(18)
-									.addComponent(button_9, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_10, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_11, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_3.setVerticalGroup(
-			gl_panel_3.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_3.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_12, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_13)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_14, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-=======
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_13)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_14, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-					.addComponent(textArea_7, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_3.createSequentialGroup()
-							.addComponent(label_15, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_6, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_3.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_10, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_9)
-								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_3.setLayout(gl_panel_3);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_4, null);
-		
-		JLabel label_16 = new JLabel();
-		label_16.setToolTipText("");
-		label_16.setText("Тест по следующим темам:");
-		
-		JLabel label_17 = new JLabel("За себя и за Сашку?");
-<<<<<<< HEAD
-		
-		JLabel label_18 = new JLabel("New label");
-		
-		JTextArea textArea_8 = new JTextArea();
-		
-		JTextArea textArea_9 = new JTextArea();
-		textArea_9.setWrapStyleWord(true);
-		textArea_9.setLineWrap(true);
-		textArea_9.setEditable(false);
-		textArea_9.setBackground(Color.WHITE);
-		
-=======
-		
-		JLabel label_18 = new JLabel("New label");
-		
-		JTextArea textArea_8 = new JTextArea();
-		
-		JTextArea textArea_9 = new JTextArea();
-		textArea_9.setWrapStyleWord(true);
-		textArea_9.setLineWrap(true);
-		textArea_9.setEditable(false);
-		textArea_9.setBackground(Color.WHITE);
-		
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		JLabel label_23 = new JLabel("Введите ответ:");
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		
-		JButton button_12 = new JButton("Ввод");
-		
-		JButton button_13 = new JButton("Назад");
-		
-		JButton button_14 = new JButton("Вперед");
-		GroupLayout gl_panel_4 = new GroupLayout(panel_4);
-		gl_panel_4.setHorizontalGroup(
-			gl_panel_4.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_4.createSequentialGroup()
-					.addGroup(gl_panel_4.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_4.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_4.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_16, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_17, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_18, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_4.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_4.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_4.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_9, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_4.createSequentialGroup()
-									.addComponent(label_23, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_4)
-									.addGap(18)
-									.addComponent(button_12, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_13, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_14, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_4.setVerticalGroup(
-			gl_panel_4.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_4.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_16, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_17)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_18, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_9, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-=======
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_17)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_18, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_9, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-					.addGroup(gl_panel_4.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_4.createSequentialGroup()
-							.addComponent(label_23, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_8, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_4.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_4.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_13, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_12)
-								.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_14, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_4.setLayout(gl_panel_4);
-		
-		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_6, null);
-		
-		JLabel label_24 = new JLabel();
-		label_24.setToolTipText("");
-		label_24.setText("Тест по следующим темам:");
-		
-		JLabel label_25 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_26 = new JLabel("New label");
-		
-		JTextArea textArea_12 = new JTextArea();
-		
-		JTextArea textArea_13 = new JTextArea();
-		textArea_13.setWrapStyleWord(true);
-		textArea_13.setLineWrap(true);
-		textArea_13.setEditable(false);
-		textArea_13.setBackground(Color.WHITE);
-		
-		JLabel label_27 = new JLabel("Введите ответ:");
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		
-		JButton button_18 = new JButton("Ввод");
-		
-		JButton button_19 = new JButton("Назад");
-		
-		JButton button_20 = new JButton("Вперед");
-		GroupLayout gl_panel_6 = new GroupLayout(panel_6);
-		gl_panel_6.setHorizontalGroup(
-			gl_panel_6.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_6.createSequentialGroup()
-					.addGroup(gl_panel_6.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_6.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_6.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_24, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_25, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_26, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_6.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_6.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_6.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_13, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_6.createSequentialGroup()
-									.addComponent(label_27, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_6)
-									.addGap(18)
-									.addComponent(button_18, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_19, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_20, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_6.setVerticalGroup(
-			gl_panel_6.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_6.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_24, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_25)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_26, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_13, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-=======
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_25)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_26, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_13, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-					.addGroup(gl_panel_6.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_6.createSequentialGroup()
-							.addComponent(label_27, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_12, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_6.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_6.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_19, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_18)
-								.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_20, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_6.setLayout(gl_panel_6);
-		
-		JPanel panel_7 = new JPanel();
-		panel_7.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_7, null);
-		
-		JLabel label_28 = new JLabel();
-		label_28.setToolTipText("");
-		label_28.setText("Тест по следующим темам:");
-<<<<<<< HEAD
-		
-		JLabel label_29 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_30 = new JLabel("New label");
-		
-		JTextArea textArea_14 = new JTextArea();
-		
-		JTextArea textArea_15 = new JTextArea();
-		textArea_15.setWrapStyleWord(true);
-		textArea_15.setLineWrap(true);
-		textArea_15.setEditable(false);
-		textArea_15.setBackground(Color.WHITE);
-		
-=======
-		
-		JLabel label_29 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_30 = new JLabel("New label");
-		
-		JTextArea textArea_14 = new JTextArea();
-		
-		JTextArea textArea_15 = new JTextArea();
-		textArea_15.setWrapStyleWord(true);
-		textArea_15.setLineWrap(true);
-		textArea_15.setEditable(false);
-		textArea_15.setBackground(Color.WHITE);
-		
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		JLabel label_31 = new JLabel("Введите ответ:");
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		
-		JButton button_21 = new JButton("Ввод");
-		
-		JButton button_22 = new JButton("Назад");
-		
-		JButton button_23 = new JButton("Вперед");
-		GroupLayout gl_panel_7 = new GroupLayout(panel_7);
-		gl_panel_7.setHorizontalGroup(
-			gl_panel_7.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_7.createSequentialGroup()
-					.addGroup(gl_panel_7.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_7.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_7.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_28, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_29, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_30, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_7.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_14, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_7.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_7.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_15, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_7.createSequentialGroup()
-									.addComponent(label_31, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_7)
-									.addGap(18)
-									.addComponent(button_21, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_22, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_23, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_7.setVerticalGroup(
-			gl_panel_7.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_7.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_28, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_29)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_30, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_15, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_7.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_7.createSequentialGroup()
-							.addComponent(label_31, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_14, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_7.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_7.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_22, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_21)
-								.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_23, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_7.setLayout(gl_panel_7);
-		
-		JPanel panel_8 = new JPanel();
-		panel_8.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_8, null);
-		
-		JLabel label_32 = new JLabel();
-		label_32.setToolTipText("");
-		label_32.setText("Тест по следующим темам:");
-		
-		JLabel label_33 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_34 = new JLabel("New label");
-		
-		JTextArea textArea_16 = new JTextArea();
-		
-		JTextArea textArea_17 = new JTextArea();
-		textArea_17.setWrapStyleWord(true);
-		textArea_17.setLineWrap(true);
-		textArea_17.setEditable(false);
-		textArea_17.setBackground(Color.WHITE);
-		
-		JLabel label_35 = new JLabel("Введите ответ:");
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		
-		JButton button_24 = new JButton("Ввод");
-<<<<<<< HEAD
-		
-		JButton button_25 = new JButton("Назад");
-		
-=======
-		
-		JButton button_25 = new JButton("Назад");
-		
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		JButton button_26 = new JButton("Вперед");
-		GroupLayout gl_panel_8 = new GroupLayout(panel_8);
-		gl_panel_8.setHorizontalGroup(
-			gl_panel_8.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_8.createSequentialGroup()
-					.addGroup(gl_panel_8.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_8.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_8.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_32, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_33, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_34, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_8.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_16, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_8.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_8.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_17, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_8.createSequentialGroup()
-									.addComponent(label_35, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_8)
-									.addGap(18)
-									.addComponent(button_24, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_25, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_26, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_8.setVerticalGroup(
-			gl_panel_8.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_8.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_32, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_33)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_34, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_17, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_8.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_8.createSequentialGroup()
-							.addComponent(label_35, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_16, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_8.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_8.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_25, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_24)
-								.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_26, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_8.setLayout(gl_panel_8);
-		
-		JPanel panel_9 = new JPanel();
-		panel_9.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_9, null);
-		
-		JLabel label_36 = new JLabel();
-		label_36.setToolTipText("");
-		label_36.setText("Тест по следующим темам:");
-<<<<<<< HEAD
-		
-		JLabel label_37 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_38 = new JLabel("New label");
-		
-		JTextArea textArea_18 = new JTextArea();
-		
-		JTextArea textArea_19 = new JTextArea();
-		textArea_19.setWrapStyleWord(true);
-		textArea_19.setLineWrap(true);
-		textArea_19.setEditable(false);
-		textArea_19.setBackground(Color.WHITE);
-		
-=======
-		
-		JLabel label_37 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_38 = new JLabel("New label");
-		
-		JTextArea textArea_18 = new JTextArea();
-		
-		JTextArea textArea_19 = new JTextArea();
-		textArea_19.setWrapStyleWord(true);
-		textArea_19.setLineWrap(true);
-		textArea_19.setEditable(false);
-		textArea_19.setBackground(Color.WHITE);
-		
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		JLabel label_39 = new JLabel("Введите ответ:");
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		
-		JButton button_27 = new JButton("Ввод");
-		
-		JButton button_28 = new JButton("Назад");
-		
-		JButton button_29 = new JButton("Вперед");
-		GroupLayout gl_panel_9 = new GroupLayout(panel_9);
-		gl_panel_9.setHorizontalGroup(
-			gl_panel_9.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_9.createSequentialGroup()
-					.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_9.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_36, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_37, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_38, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_9.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_18, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_9.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_19, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_9.createSequentialGroup()
-									.addComponent(label_39, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_9)
-									.addGap(18)
-									.addComponent(button_27, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_28, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_29, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_9.setVerticalGroup(
-			gl_panel_9.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_9.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_36, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_37)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_38, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_19, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-=======
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_19, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-					.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_9.createSequentialGroup()
-							.addComponent(label_39, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_18, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_9.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_9.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_28, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_27)
-								.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_29, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_9.setLayout(gl_panel_9);
-		
-		JPanel panel_10 = new JPanel();
-		panel_10.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_10, null);
-		
-		JLabel label_40 = new JLabel();
-		label_40.setToolTipText("");
-		label_40.setText("Тест по следующим темам:");
-		
-		JLabel label_41 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_42 = new JLabel("New label");
-		
-		JTextArea textArea_20 = new JTextArea();
-		
-		JTextArea textArea_21 = new JTextArea();
-		textArea_21.setWrapStyleWord(true);
-		textArea_21.setLineWrap(true);
-		textArea_21.setEditable(false);
-		textArea_21.setBackground(Color.WHITE);
-		
-		JLabel label_43 = new JLabel("Введите ответ:");
-		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		
-		JButton button_30 = new JButton("Ввод");
-<<<<<<< HEAD
-		
-		JButton button_31 = new JButton("Назад");
-		
-=======
-		
-		JButton button_31 = new JButton("Назад");
-		
->>>>>>> a3720c6110f4422394553d991e3222fde4229277
-		JButton button_32 = new JButton("Вперед");
-		GroupLayout gl_panel_10 = new GroupLayout(panel_10);
-		gl_panel_10.setHorizontalGroup(
-			gl_panel_10.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_10.createSequentialGroup()
-					.addGroup(gl_panel_10.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_10.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_10.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_40, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_41, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_42, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_10.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_20, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_10.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_10.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_21, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_10.createSequentialGroup()
-									.addComponent(label_43, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_10)
-									.addGap(18)
-									.addComponent(button_30, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_31, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_32, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_10.setVerticalGroup(
-			gl_panel_10.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_10.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_40, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_41)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_42, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_21, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_10.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_10.createSequentialGroup()
-							.addComponent(label_43, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_20, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_10.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_10.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_31, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_30)
-								.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_32, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_10.setLayout(gl_panel_10);
-		
-		JPanel panel_11 = new JPanel();
-		panel_11.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, panel_11, null);
-		
-		JLabel label_44 = new JLabel();
-		label_44.setToolTipText("");
-		label_44.setText("Тест по следующим темам:");
-		
-		JLabel label_45 = new JLabel("За себя и за Сашку?");
-		
-		JLabel label_46 = new JLabel("New label");
-		
-		JTextArea textArea_22 = new JTextArea();
-		
-		JTextArea textArea_23 = new JTextArea();
-		textArea_23.setWrapStyleWord(true);
-		textArea_23.setLineWrap(true);
-		textArea_23.setEditable(false);
-		textArea_23.setBackground(Color.WHITE);
-		
-		JLabel label_47 = new JLabel("Введите ответ:");
-		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		
-		JButton button_33 = new JButton("Ввод");
-		
-		JButton button_34 = new JButton("Назад");
-		
-		JButton button_35 = new JButton("Вперед");
-		GroupLayout gl_panel_11 = new GroupLayout(panel_11);
-		gl_panel_11.setHorizontalGroup(
-			gl_panel_11.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 746, Short.MAX_VALUE)
-				.addGroup(gl_panel_11.createSequentialGroup()
-					.addGroup(gl_panel_11.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_11.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_11.createParallelGroup(Alignment.LEADING)
-								.addComponent(label_44, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_45, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(label_46, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_11.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textArea_22, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_11.createSequentialGroup()
-							.addGap(19)
-							.addGroup(gl_panel_11.createParallelGroup(Alignment.LEADING)
-								.addComponent(textArea_23, GroupLayout.PREFERRED_SIZE, 695, GroupLayout.PREFERRED_SIZE)
-								.addGroup(gl_panel_11.createSequentialGroup()
-									.addComponent(label_47, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(textField_11)
-									.addGap(18)
-									.addComponent(button_33, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(button_34, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(button_35, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-									.addPreferredGap(ComponentPlacement.RELATED)))))
-					.addContainerGap(32, Short.MAX_VALUE))
-		);
-		gl_panel_11.setVerticalGroup(
-			gl_panel_11.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 347, Short.MAX_VALUE)
-				.addGroup(gl_panel_11.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(label_44, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(label_45)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(label_46, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textArea_23, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_11.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_11.createSequentialGroup()
-							.addComponent(label_47, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-							.addGap(93)
-							.addComponent(textArea_22, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_11.createParallelGroup(Alignment.LEADING, false)
-							.addGroup(gl_panel_11.createParallelGroup(Alignment.BASELINE)
-								.addComponent(button_34, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(button_33)
-								.addComponent(textField_11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addComponent(button_35, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(111))
-		);
-		panel_11.setLayout(gl_panel_11);
+
+		testPanel_2 = new JPanel();
+		testPanel_2.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_2, null);
+
+		themesLabel_2 = new JLabel();
+		themesLabel_2.setToolTipText("");
+		themesLabel_2.setText("Тест по следующим темам:");
+
+		themeLabel_2 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel = new JLabel("New label");
+
+		textQuestTextArea_2 = new JTextArea();
+		textQuestTextArea_2.setWrapStyleWord(true);
+		textQuestTextArea_2.setLineWrap(true);
+		textQuestTextArea_2.setEditable(false);
+		textQuestTextArea_2.setBackground(Color.WHITE);
+
+		answLabel_2 = new JLabel("Введите ответ:");
+
+		answTextField_2 = new JTextField();
+		answTextField_2.setColumns(10);
+
+		enterButton_2 = new JButton("Ввод");
+
+		backButton_2 = new JButton("Назад");
+
+		nextButton_2 = new JButton("Вперед");
+		GroupLayout gl_testPanel_2 = new GroupLayout(testPanel_2);
+		gl_testPanel_2.setHorizontalGroup(gl_testPanel_2.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_2
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_2.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_2
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_2.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_2, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_2, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_2.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_2.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_2, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_2.createSequentialGroup()
+														.addComponent(answLabel_2, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_2).addGap(18)
+														.addComponent(enterButton_2, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_2, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_2, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_2.setVerticalGroup(gl_testPanel_2.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_2
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_2, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_2)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_2, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_2.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_2, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_2.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_2.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_2)
+										.addComponent(answTextField_2, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_2.setLayout(gl_testPanel_2);
+
+		testPanel_3 = new JPanel();
+		testPanel_3.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_3, null);
+
+		themesLabel_3 = new JLabel();
+		themesLabel_3.setToolTipText("");
+		themesLabel_3.setText("Тест по следующим темам:");
+
+		themeLabel_3 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_3 = new JLabel("New label");
+
+		textQuestTextArea_3 = new JTextArea();
+		textQuestTextArea_3.setWrapStyleWord(true);
+		textQuestTextArea_3.setLineWrap(true);
+		textQuestTextArea_3.setEditable(false);
+		textQuestTextArea_3.setBackground(Color.WHITE);
+
+		answLabel_3 = new JLabel("Введите ответ:");
+
+		answTextField_3 = new JTextField();
+		answTextField_3.setColumns(10);
+
+		enterButton_3 = new JButton("Ввод");
+
+		backButton_3 = new JButton("Назад");
+
+		nextButton_3 = new JButton("Вперед");
+		GroupLayout gl_testPanel_3 = new GroupLayout(testPanel_3);
+		gl_testPanel_3.setHorizontalGroup(gl_testPanel_3.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_3
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_3.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_3
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_3.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_3, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_3, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_3, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_3.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_3.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_3, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_3.createSequentialGroup()
+														.addComponent(answLabel_3, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_3).addGap(18)
+														.addComponent(enterButton_3, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_3, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_3, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_3.setVerticalGroup(gl_testPanel_3.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_3
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_3, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_3)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_3, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_3, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_3.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_3, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_3.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_3.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_3)
+										.addComponent(answTextField_3, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_3.setLayout(gl_testPanel_3);
+
+		testPanel_4 = new JPanel();
+		testPanel_4.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_4, null);
+
+		themesLabel_4 = new JLabel();
+		themesLabel_4.setToolTipText("");
+		themesLabel_4.setText("Тест по следующим темам:");
+
+		themeLabel_4 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_4 = new JLabel("New label");
+
+		textQuestTextArea_4 = new JTextArea();
+		textQuestTextArea_4.setWrapStyleWord(true);
+		textQuestTextArea_4.setLineWrap(true);
+		textQuestTextArea_4.setEditable(false);
+		textQuestTextArea_4.setBackground(Color.WHITE);
+
+		JLabel answLabel_4 = new JLabel("Введите ответ:");
+
+		answTextField_4 = new JTextField();
+		answTextField_4.setColumns(10);
+
+		enterButton_4 = new JButton("Ввод");
+
+		backButton_4 = new JButton("Назад");
+
+		nextButton_4 = new JButton("Вперед");
+		GroupLayout gl_testPanel_4 = new GroupLayout(testPanel_4);
+		gl_testPanel_4.setHorizontalGroup(gl_testPanel_4.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_4
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_4.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_4
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_4.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_4, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_4, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_4, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_4.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_4.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_4, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_4.createSequentialGroup()
+														.addComponent(answLabel_4, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_4).addGap(18)
+														.addComponent(enterButton_4, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_4, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_4, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_4.setVerticalGroup(gl_testPanel_4.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_4
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_4, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_4)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_4, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_4, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_4.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_4, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_4.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_4.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_4)
+										.addComponent(answTextField_4, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_4.setLayout(gl_testPanel_4);
+
+		testPanel_5 = new JPanel();
+		testPanel_5.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_5, null);
+
+		themesLabel_5 = new JLabel();
+		themesLabel_5.setToolTipText("");
+		themesLabel_5.setText("Тест по следующим темам:");
+
+		themeLabel_5 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_5 = new JLabel("New label");
+
+		textQuestTextArea_5 = new JTextArea();
+		textQuestTextArea_5.setWrapStyleWord(true);
+		textQuestTextArea_5.setLineWrap(true);
+		textQuestTextArea_5.setEditable(false);
+		textQuestTextArea_5.setBackground(Color.WHITE);
+
+		answLabel_5 = new JLabel("Введите ответ:");
+
+		answTextField_5 = new JTextField();
+		answTextField_5.setColumns(10);
+
+		enterButton_5 = new JButton("Ввод");
+
+		backButton_5 = new JButton("Назад");
+
+		nextButton_5 = new JButton("Вперед");
+		GroupLayout gl_testPanel_5 = new GroupLayout(testPanel_5);
+		gl_testPanel_5.setHorizontalGroup(gl_testPanel_5.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_5
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_5.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_5
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_5.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_5, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_5, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_5, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_5.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_5.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_5, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_5.createSequentialGroup()
+														.addComponent(answLabel_5, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_5).addGap(18)
+														.addComponent(enterButton_5, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_5, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_5, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_5.setVerticalGroup(gl_testPanel_5.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_5
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_5, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_5)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_5, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_5, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_5.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_5, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_5.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_5.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_5)
+										.addComponent(answTextField_5, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_5.setLayout(gl_testPanel_5);
+
+		testPanel_6 = new JPanel();
+		testPanel_6.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_6, null);
+
+		themesLabel_6 = new JLabel();
+		themesLabel_6.setToolTipText("");
+		themesLabel_6.setText("Тест по следующим темам:");
+
+		themeLabel_6 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_6 = new JLabel("New label");
+
+		textQuestTextArea_6 = new JTextArea();
+		textQuestTextArea_6.setWrapStyleWord(true);
+		textQuestTextArea_6.setLineWrap(true);
+		textQuestTextArea_6.setEditable(false);
+		textQuestTextArea_6.setBackground(Color.WHITE);
+
+		answLabel_6 = new JLabel("Введите ответ:");
+
+		answTextField_6 = new JTextField();
+		answTextField_6.setColumns(10);
+
+		enterButton_6 = new JButton("Ввод");
+
+		backButton_6 = new JButton("Назад");
+
+		nextButton_6 = new JButton("Вперед");
+		GroupLayout gl_testPanel_6 = new GroupLayout(testPanel_6);
+		gl_testPanel_6.setHorizontalGroup(gl_testPanel_6.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_6
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_6.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_6
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_6.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_6, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_6, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_6, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_6.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_6.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_6, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_6.createSequentialGroup()
+														.addComponent(answLabel_6, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_6).addGap(18)
+														.addComponent(enterButton_6, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_6, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_6, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_6.setVerticalGroup(gl_testPanel_6.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_6
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_6, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_6)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_6, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_6, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_6.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_6, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_6.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_6.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_6)
+										.addComponent(answTextField_6, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_6.setLayout(gl_testPanel_6);
+
+		testPanel_7 = new JPanel();
+		testPanel_7.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_7, null);
+
+		themesLabel_7 = new JLabel();
+		themesLabel_7.setToolTipText("");
+		themesLabel_7.setText("Тест по следующим темам:");
+
+		themeLabel_7 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_7 = new JLabel("New label");
+
+		textQuestTextArea_7 = new JTextArea();
+		textQuestTextArea_7.setWrapStyleWord(true);
+		textQuestTextArea_7.setLineWrap(true);
+		textQuestTextArea_7.setEditable(false);
+		textQuestTextArea_7.setBackground(Color.WHITE);
+
+		answLabel_7 = new JLabel("Введите ответ:");
+
+		answTextField_7 = new JTextField();
+		answTextField_7.setColumns(10);
+
+		enterButton_7 = new JButton("Ввод");
+
+		backButton_7 = new JButton("Назад");
+
+		nextButton_7 = new JButton("Вперед");
+		GroupLayout gl_testPanel_7 = new GroupLayout(testPanel_7);
+		gl_testPanel_7.setHorizontalGroup(gl_testPanel_7.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_7
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_7.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_7
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_7.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_7, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_7, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_7, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_7.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_7.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_7, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_7.createSequentialGroup()
+														.addComponent(answLabel_7, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_7).addGap(18)
+														.addComponent(enterButton_7, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_7, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_7, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_7.setVerticalGroup(gl_testPanel_7.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_7
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_7, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_7)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_7, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_7, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_7.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_7.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_7.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_7)
+										.addComponent(answTextField_7, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_7, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_7.setLayout(gl_testPanel_7);
+
+		testPanel_8 = new JPanel();
+		testPanel_8.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_8, null);
+
+		themesLabel_8 = new JLabel();
+		themesLabel_8.setToolTipText("");
+		themesLabel_8.setText("Тест по следующим темам:");
+
+		themeLabel_8 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_8 = new JLabel("New label");
+
+		textQuestTextArea_8 = new JTextArea();
+		textQuestTextArea_8.setWrapStyleWord(true);
+		textQuestTextArea_8.setLineWrap(true);
+		textQuestTextArea_8.setEditable(false);
+		textQuestTextArea_8.setBackground(Color.WHITE);
+
+		answLabel_8 = new JLabel("Введите ответ:");
+
+		answTextField_8 = new JTextField();
+		answTextField_8.setColumns(10);
+
+		enterButton_8 = new JButton("Ввод");
+
+		backButton_8 = new JButton("Назад");
+
+		nextButton_8 = new JButton("Вперед");
+		GroupLayout gl_testPanel_8 = new GroupLayout(testPanel_8);
+		gl_testPanel_8.setHorizontalGroup(gl_testPanel_8.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_8
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_8.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_8
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_8.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_8, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_8, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_8, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_8.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_8.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_8, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_8.createSequentialGroup()
+														.addComponent(answLabel_8, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_8).addGap(18)
+														.addComponent(enterButton_8, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_8, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_8, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_8.setVerticalGroup(gl_testPanel_8.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_8
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_8, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_8)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_8, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_8, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_8.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_8, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_8.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_8.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_8)
+										.addComponent(answTextField_8, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_8, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_8.setLayout(gl_testPanel_8);
+
+		testPanel_9 = new JPanel();
+		testPanel_9.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_9, null);
+
+		themesLabel_9 = new JLabel();
+		themesLabel_9.setToolTipText("");
+		themesLabel_9.setText("Тест по следующим темам:");
+
+		themeLabel_9 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_9 = new JLabel("New label");
+
+		textQuestTextArea_9 = new JTextArea();
+		textQuestTextArea_9.setWrapStyleWord(true);
+		textQuestTextArea_9.setLineWrap(true);
+		textQuestTextArea_9.setEditable(false);
+		textQuestTextArea_9.setBackground(Color.WHITE);
+
+		answLabel_9 = new JLabel("Введите ответ:");
+
+		answTextField_9 = new JTextField();
+		answTextField_9.setColumns(10);
+
+		enterButton_9 = new JButton("Ввод");
+
+		backButton_9 = new JButton("Назад");
+
+		nextButton_9 = new JButton("Вперед");
+		GroupLayout gl_testPanel_9 = new GroupLayout(testPanel_9);
+		gl_testPanel_9.setHorizontalGroup(gl_testPanel_9.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_9
+				.createSequentialGroup()
+				.addGroup(gl_testPanel_9.createParallelGroup(Alignment.LEADING, false).addGroup(gl_testPanel_9
+						.createSequentialGroup().addGap(19)
+						.addGroup(gl_testPanel_9.createParallelGroup(Alignment.LEADING)
+								.addComponent(themesLabel_9, GroupLayout.PREFERRED_SIZE, 528,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(themeLabel_9, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
+								.addComponent(nameQuestLabel_9, GroupLayout.PREFERRED_SIZE, 78,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(
+								gl_testPanel_9.createSequentialGroup().addGap(19)
+										.addGroup(gl_testPanel_9.createParallelGroup(Alignment.LEADING)
+												.addComponent(textQuestTextArea_9, GroupLayout.PREFERRED_SIZE, 695,
+														GroupLayout.PREFERRED_SIZE)
+												.addGroup(gl_testPanel_9.createSequentialGroup()
+														.addComponent(answLabel_9, GroupLayout.PREFERRED_SIZE, 80,
+																GroupLayout.PREFERRED_SIZE)
+														.addGap(18).addComponent(answTextField_9).addGap(18)
+														.addComponent(enterButton_9, GroupLayout.PREFERRED_SIZE, 96,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.UNRELATED)
+														.addComponent(backButton_9, GroupLayout.PREFERRED_SIZE, 105,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(nextButton_9, GroupLayout.PREFERRED_SIZE, 100,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED)))))
+				.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_9.setVerticalGroup(gl_testPanel_9.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_9
+				.createSequentialGroup().addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+				.addComponent(themesLabel_9, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_9)
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addComponent(nameQuestLabel_9, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(textQuestTextArea_9, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_testPanel_9.createParallelGroup(Alignment.LEADING)
+						.addComponent(answLabel_9, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_testPanel_9.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_testPanel_9.createParallelGroup(Alignment.BASELINE)
+										.addComponent(backButton_9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)
+										.addComponent(enterButton_9)
+										.addComponent(answTextField_9, GroupLayout.PREFERRED_SIZE,
+												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(nextButton_9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										Short.MAX_VALUE)))
+				.addGap(232)));
+		testPanel_9.setLayout(gl_testPanel_9);
+
+		testPanel_10 = new JPanel();
+		testPanel_10.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_10, null);
+
+		themesLabel_10 = new JLabel();
+		themesLabel_10.setToolTipText("");
+		themesLabel_10.setText("Тест по следующим темам:");
+
+		themeLabel_10 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_10 = new JLabel("New label");
+
+		textQuestTextArea_10 = new JTextArea();
+		textQuestTextArea_10.setWrapStyleWord(true);
+		textQuestTextArea_10.setLineWrap(true);
+		textQuestTextArea_10.setEditable(false);
+		textQuestTextArea_10.setBackground(Color.WHITE);
+
+		answLabel_10 = new JLabel("Введите ответ:");
+
+		answTextField_10 = new JTextField();
+		answTextField_10.setColumns(10);
+
+		enterButton_10 = new JButton("Ввод");
+
+		backButton_10 = new JButton("Назад");
+
+		nextButton_10 = new JButton("Вперед");
+		GroupLayout gl_testPanel_10 = new GroupLayout(testPanel_10);
+		gl_testPanel_10.setHorizontalGroup(gl_testPanel_10.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_testPanel_10.createSequentialGroup().addGroup(gl_testPanel_10
+						.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_testPanel_10.createSequentialGroup().addGap(19)
+								.addGroup(gl_testPanel_10.createParallelGroup(Alignment.LEADING)
+										.addComponent(themesLabel_10, GroupLayout.PREFERRED_SIZE, 528,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(themeLabel_10, GroupLayout.PREFERRED_SIZE, 542,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nameQuestLabel_10, GroupLayout.PREFERRED_SIZE, 78,
+												GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_testPanel_10.createSequentialGroup().addGap(19)
+								.addGroup(gl_testPanel_10.createParallelGroup(Alignment.LEADING)
+										.addComponent(textQuestTextArea_10, GroupLayout.PREFERRED_SIZE, 695,
+												GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_testPanel_10.createSequentialGroup()
+												.addComponent(answLabel_10, GroupLayout.PREFERRED_SIZE, 80,
+														GroupLayout.PREFERRED_SIZE)
+												.addGap(18).addComponent(answTextField_10).addGap(18)
+												.addComponent(enterButton_10, GroupLayout.PREFERRED_SIZE, 96,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(backButton_10, GroupLayout.PREFERRED_SIZE, 105,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(nextButton_10, GroupLayout.PREFERRED_SIZE, 100,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)))))
+						.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_10.setVerticalGroup(gl_testPanel_10.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_testPanel_10.createSequentialGroup()
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(themesLabel_10, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_10)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(nameQuestLabel_10, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(textQuestTextArea_10, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_testPanel_10.createParallelGroup(Alignment.LEADING)
+								.addComponent(answLabel_10, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_testPanel_10.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(gl_testPanel_10.createParallelGroup(Alignment.BASELINE)
+												.addComponent(backButton_10, GroupLayout.DEFAULT_SIZE,
+														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(enterButton_10)
+												.addComponent(answTextField_10, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+										.addComponent(nextButton_10, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)))
+						.addGap(232)));
+		testPanel_10.setLayout(gl_testPanel_10);
+
+		testPanel_11 = new JPanel();
+		testPanel_11.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_11, null);
+
+		themesLabel_11 = new JLabel();
+		themesLabel_11.setToolTipText("");
+		themesLabel_11.setText("Тест по следующим темам:");
+
+		themeLabel_11 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_11 = new JLabel("New label");
+
+		textQuestTextArea_11 = new JTextArea();
+		textQuestTextArea_11.setWrapStyleWord(true);
+		textQuestTextArea_11.setLineWrap(true);
+		textQuestTextArea_11.setEditable(false);
+		textQuestTextArea_11.setBackground(Color.WHITE);
+
+		answLabel_11 = new JLabel("Введите ответ:");
+
+		answTextField_11 = new JTextField();
+		answTextField_11.setColumns(10);
+
+		enterButton_11 = new JButton("Ввод");
+
+		backButton_11 = new JButton("Назад");
+
+		nextButton_11 = new JButton("Вперед");
+		GroupLayout gl_testPanel_11 = new GroupLayout(testPanel_11);
+		gl_testPanel_11.setHorizontalGroup(gl_testPanel_11.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_testPanel_11.createSequentialGroup().addGroup(gl_testPanel_11
+						.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_testPanel_11.createSequentialGroup().addGap(19)
+								.addGroup(gl_testPanel_11.createParallelGroup(Alignment.LEADING)
+										.addComponent(themesLabel_11, GroupLayout.PREFERRED_SIZE, 528,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(themeLabel_11, GroupLayout.PREFERRED_SIZE, 542,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nameQuestLabel_11, GroupLayout.PREFERRED_SIZE, 78,
+												GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_testPanel_11.createSequentialGroup().addGap(19)
+								.addGroup(gl_testPanel_11.createParallelGroup(Alignment.LEADING)
+										.addComponent(textQuestTextArea_11, GroupLayout.PREFERRED_SIZE, 695,
+												GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_testPanel_11.createSequentialGroup()
+												.addComponent(answLabel_11, GroupLayout.PREFERRED_SIZE, 80,
+														GroupLayout.PREFERRED_SIZE)
+												.addGap(18).addComponent(answTextField_11).addGap(18)
+												.addComponent(enterButton_11, GroupLayout.PREFERRED_SIZE, 96,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(backButton_11, GroupLayout.PREFERRED_SIZE, 105,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(nextButton_11, GroupLayout.PREFERRED_SIZE, 100,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)))))
+						.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_11.setVerticalGroup(gl_testPanel_11.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_testPanel_11.createSequentialGroup()
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(themesLabel_11, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_11)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(nameQuestLabel_11, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(textQuestTextArea_11, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_testPanel_11.createParallelGroup(Alignment.LEADING)
+								.addComponent(answLabel_11, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_testPanel_11.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(gl_testPanel_11.createParallelGroup(Alignment.BASELINE)
+												.addComponent(backButton_11, GroupLayout.DEFAULT_SIZE,
+														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(enterButton_11)
+												.addComponent(answTextField_11, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+										.addComponent(nextButton_11, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)))
+						.addGap(232)));
+		testPanel_11.setLayout(gl_testPanel_11);
+
+		testPanel_12 = new JPanel();
+		testPanel_12.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_12, null);
+
+		themesLabel_12 = new JLabel();
+		themesLabel_12.setToolTipText("");
+		themesLabel_12.setText("Тест по следующим темам:");
+
+		themeLabel_12 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_12 = new JLabel("New label");
+
+		textQuestTextArea_12 = new JTextArea();
+		textQuestTextArea_12.setWrapStyleWord(true);
+		textQuestTextArea_12.setLineWrap(true);
+		textQuestTextArea_12.setEditable(false);
+		textQuestTextArea_12.setBackground(Color.WHITE);
+
+		answLabel_12 = new JLabel("Введите ответ:");
+
+		answTextField_12 = new JTextField();
+		answTextField_12.setColumns(10);
+
+		enterButton_12 = new JButton("Ввод");
+
+		backButton_12 = new JButton("Назад");
+
+		nextButton_12 = new JButton("Вперед");
+		GroupLayout gl_testPanel_12 = new GroupLayout(testPanel_12);
+		gl_testPanel_12.setHorizontalGroup(gl_testPanel_12.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_testPanel_12.createSequentialGroup().addGroup(gl_testPanel_12
+						.createParallelGroup(Alignment.LEADING, false)
+						.addGroup(gl_testPanel_12.createSequentialGroup().addGap(19)
+								.addGroup(gl_testPanel_12.createParallelGroup(Alignment.LEADING)
+										.addComponent(themesLabel_12, GroupLayout.PREFERRED_SIZE, 528,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(themeLabel_12, GroupLayout.PREFERRED_SIZE, 542,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(nameQuestLabel_12, GroupLayout.PREFERRED_SIZE, 78,
+												GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_testPanel_12.createSequentialGroup().addGap(19)
+								.addGroup(gl_testPanel_12.createParallelGroup(Alignment.LEADING)
+										.addComponent(textQuestTextArea_12, GroupLayout.PREFERRED_SIZE, 695,
+												GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_testPanel_12.createSequentialGroup()
+												.addComponent(answLabel_12, GroupLayout.PREFERRED_SIZE, 80,
+														GroupLayout.PREFERRED_SIZE)
+												.addGap(18).addComponent(answTextField_12).addGap(18)
+												.addComponent(enterButton_12, GroupLayout.PREFERRED_SIZE, 96,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.UNRELATED)
+												.addComponent(backButton_12, GroupLayout.PREFERRED_SIZE, 105,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(nextButton_12, GroupLayout.PREFERRED_SIZE, 100,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)))))
+						.addContainerGap(32, Short.MAX_VALUE)));
+		gl_testPanel_12.setVerticalGroup(gl_testPanel_12.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_testPanel_12.createSequentialGroup()
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(themesLabel_12, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_12)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(nameQuestLabel_12, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(textQuestTextArea_12, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_testPanel_12.createParallelGroup(Alignment.LEADING)
+								.addComponent(answLabel_12, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_testPanel_12.createParallelGroup(Alignment.LEADING, false)
+										.addGroup(gl_testPanel_12.createParallelGroup(Alignment.BASELINE)
+												.addComponent(backButton_12, GroupLayout.DEFAULT_SIZE,
+														GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(enterButton_12)
+												.addComponent(answTextField_12, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+										.addComponent(nextButton_12, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+												Short.MAX_VALUE)))
+						.addGap(232)));
+		testPanel_12.setLayout(gl_testPanel_12);
 
 	}
 }
