@@ -79,14 +79,15 @@ public class MainFrame extends JFrame {
 					for (i = 0; i < tests.length; i++) {
 						tests[i] = Helper.getTests(listTheme[i]);
 					}
-					TestFrame testFrame = new TestFrame(tests);
+					TestFrame testFrame = new TestFrame(tests, MainFrame.this);
 					setVisible(false);
 					testFrame.setVisible(true);
 				} else if (selectedNode != null) {
 					Object selectedObj = selectedNode.getUserObject().toString();
 					Test[] theme = new Test[1];
 					theme[0] = Helper.getTests(selectedObj.toString());
-					TestFrame testFrame = new TestFrame(theme);
+					//создание нового окна
+					TestFrame testFrame = new TestFrame(theme, MainFrame.this);
 					setVisible(false);
 					testFrame.setVisible(true);
 				} else if (selectedNode == null) {

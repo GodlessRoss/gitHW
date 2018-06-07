@@ -12,8 +12,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class TestFrame extends JFrame {
-	private JTextField answTextField_1;
-	private JTextField answTextField_2;
+	private JTextField answTextField1;
+	private JTextField answTextField2;
 	private JTextField answTextField_3;
 	private JTextField answTextField_4;
 	private JTextField answTextField_5;
@@ -36,7 +36,7 @@ public class TestFrame extends JFrame {
 	private JPanel testPanel_2;
 	private JLabel themesLabel_2;
 	private JLabel themeLabel_2;
-	private JLabel nameQuestLabel;
+	private JLabel nameQuestLabel_2;
 	private JTextArea textQuestTextArea_2;
 	private JLabel answLabel_2;
 	private JButton enterButton_2;
@@ -132,28 +132,129 @@ public class TestFrame extends JFrame {
 	private JButton backButton_12;
 	private JButton nextButton_12;
 
-	public TestFrame(Test[] tests) {
+	MainFrame mainFrame;
+
+	public TestFrame(Test[] tests, MainFrame mainFrame) {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent event) {
+				TestFrame.this.mainFrame = mainFrame;
 				if (tests != null) {
-					for (int j = 0; j < tests.length; j++) {
-						if (tests[j] != null) {
-//							Question[] questions = tests[j].getQuestions();
-							themesLabel_1.setText(themesLabel_1.getText() + tests[j].getName() + ", ");
-						}
-					}
+					// поля класса
+					// StringBuilder totalNameTest = new StringBuilder();
+					// Question[] totalQuestions = new Question[];
+					// Test totalTest = new Test(, questions);
+					Question[] questions = tests[0].getQuestions();
+					themesLabel_1.setText(themesLabel_1.getText() + tests[0].getName() + ", ");
+					themeLabel_1.setText(tests[0].getName());
+					nameQuestLabel_1.setText(questions[0].getName());
+					textQuestTextArea_1.setText(questions[0].getText());
+					nameQuestLabel_2.setText(questions[1].getName());
+					textQuestTextArea_2.setText(questions[1].getText());
 				}
-
 			}
 		});
 		getContentPane().setEnabled(false);
-		setBounds(100, 100, 726, 373);
+		setBounds(100, 100, 839, 373);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		getContentPane().add(tabbedPane);
+
+		testPanel_1 = new JPanel();
+		testPanel_1.setBackground(Color.WHITE);
+		tabbedPane.addTab("New tab", null, testPanel_1, null);
+
+		themesLabel_1 = new JLabel();
+		themesLabel_1.setToolTipText("");
+		themesLabel_1.setText("Тест по следующим темам:");
+
+		themeLabel_1 = new JLabel("За себя и за Сашку?");
+
+		nameQuestLabel_1 = new JLabel("New label");
+
+		answLabel_1 = new JLabel("Введите ответ:");
+
+		answTextField1 = new JTextField();
+		answTextField1.setColumns(10);
+
+		enterButton_1 = new JButton("Ввод");
+		enterButton_1.addActionListener(new ActionListener() {
+?ХМ?
+			public void actionPerformed(ActionEvent event) {
+				Question[] questions = tests[0].getQuestions();
+				String message;
+				if (questions[0].getCorrectAnswer().equals(answTextField1.getText())) {
+					message = "Yep!";
+				} else {
+					message = "Nope!";
+				}
+				JOptionPane.showMessageDialog(null, message, "Total", JOptionPane.PLAIN_MESSAGE);
+			}
+		});
+
+		backButton_1 = new JButton("Назад");
+		backButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				setVisible(false);
+				mainFrame.setVisible(true);
+			}
+		});
+
+		nextButton_1 = new JButton("Вперед");
+
+		textQuestTextArea_1 = new JTextArea();
+		textQuestTextArea_1.setWrapStyleWord(true);
+		textQuestTextArea_1.setLineWrap(true);
+		textQuestTextArea_1.setEditable(false);
+		textQuestTextArea_1.setBackground(Color.ORANGE);
+		GroupLayout gl_testPanel_1 = new GroupLayout(testPanel_1);
+		gl_testPanel_1.setHorizontalGroup(gl_testPanel_1.createParallelGroup(Alignment.LEADING).addGroup(gl_testPanel_1
+				.createSequentialGroup().addGap(15)
+				.addGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING).addGroup(gl_testPanel_1
+						.createSequentialGroup()
+						.addGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
+								.addComponent(textQuestTextArea_1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE,
+										GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addGroup(gl_testPanel_1.createSequentialGroup()
+										.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 80,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(18)
+										.addComponent(answTextField1, GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+										.addGap(18)
+										.addComponent(enterButton_1, GroupLayout.PREFERRED_SIZE, 96,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(18)
+										.addComponent(backButton_1, GroupLayout.PREFERRED_SIZE, 105,
+												GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED).addComponent(nextButton_1,
+												GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+						.addGap(120))
+						.addGroup(gl_testPanel_1.createSequentialGroup().addGap(12)
+								.addGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
+										.addComponent(themesLabel_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 781,
+												Short.MAX_VALUE)
+										.addComponent(themeLabel_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 781,
+												Short.MAX_VALUE)
+										.addComponent(nameQuestLabel_1, GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE))
+								.addContainerGap()))));
+		gl_testPanel_1.setVerticalGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_testPanel_1.createSequentialGroup().addGap(20)
+						.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_1)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(textQuestTextArea_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addGroup(gl_testPanel_1.createParallelGroup(Alignment.BASELINE)
+								.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+								.addComponent(answTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(enterButton_1).addComponent(backButton_1).addComponent(nextButton_1))
+						.addGap(53)));
+		testPanel_1.setLayout(gl_testPanel_1);
 
 		testPanel_2 = new JPanel();
 		testPanel_2.setBackground(Color.WHITE);
@@ -165,7 +266,7 @@ public class TestFrame extends JFrame {
 
 		themeLabel_2 = new JLabel("За себя и за Сашку?");
 
-		nameQuestLabel = new JLabel("New label");
+		nameQuestLabel_2 = new JLabel("New label");
 
 		textQuestTextArea_2 = new JTextArea();
 		textQuestTextArea_2.setWrapStyleWord(true);
@@ -175,8 +276,8 @@ public class TestFrame extends JFrame {
 
 		answLabel_2 = new JLabel("Введите ответ:");
 
-		answTextField_2 = new JTextField();
-		answTextField_2.setColumns(10);
+		answTextField2 = new JTextField();
+		answTextField2.setColumns(10);
 
 		enterButton_2 = new JButton("Ввод");
 
@@ -192,7 +293,7 @@ public class TestFrame extends JFrame {
 								.addComponent(themesLabel_2, GroupLayout.PREFERRED_SIZE, 528,
 										GroupLayout.PREFERRED_SIZE)
 								.addComponent(themeLabel_2, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
-								.addComponent(nameQuestLabel, GroupLayout.PREFERRED_SIZE, 78,
+								.addComponent(nameQuestLabel_2, GroupLayout.PREFERRED_SIZE, 78,
 										GroupLayout.PREFERRED_SIZE)))
 						.addGroup(
 								gl_testPanel_2.createSequentialGroup().addGap(19)
@@ -202,7 +303,7 @@ public class TestFrame extends JFrame {
 												.addGroup(gl_testPanel_2.createSequentialGroup()
 														.addComponent(answLabel_2, GroupLayout.PREFERRED_SIZE, 80,
 																GroupLayout.PREFERRED_SIZE)
-														.addGap(18).addComponent(answTextField_2).addGap(18)
+														.addGap(18).addComponent(answTextField2).addGap(18)
 														.addComponent(enterButton_2, GroupLayout.PREFERRED_SIZE, 96,
 																GroupLayout.PREFERRED_SIZE)
 														.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -218,7 +319,7 @@ public class TestFrame extends JFrame {
 				.addComponent(themesLabel_2, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(ComponentPlacement.RELATED).addComponent(themeLabel_2)
 				.addPreferredGap(ComponentPlacement.UNRELATED)
-				.addComponent(nameQuestLabel, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+				.addComponent(nameQuestLabel_2, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(ComponentPlacement.RELATED)
 				.addComponent(textQuestTextArea_2, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(ComponentPlacement.RELATED)
@@ -229,95 +330,12 @@ public class TestFrame extends JFrame {
 										.addComponent(backButton_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 												Short.MAX_VALUE)
 										.addComponent(enterButton_2)
-										.addComponent(answTextField_2, GroupLayout.PREFERRED_SIZE,
+										.addComponent(answTextField2, GroupLayout.PREFERRED_SIZE,
 												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 								.addComponent(nextButton_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 										Short.MAX_VALUE)))
 				.addGap(232)));
 		testPanel_2.setLayout(gl_testPanel_2);
-		
-				testPanel_1 = new JPanel();
-				testPanel_1.setBackground(Color.WHITE);
-				tabbedPane.addTab("New tab", null, testPanel_1, null);
-				
-						themesLabel_1 = new JLabel();
-						themesLabel_1.setToolTipText("");
-						themesLabel_1.setText("Тест по следующим темам:");
-						
-								themeLabel_1 = new JLabel("За себя и за Сашку?");
-								
-										nameQuestLabel_1 = new JLabel("New label");
-										
-												answLabel_1 = new JLabel("Введите ответ:");
-												
-														answTextField_1 = new JTextField();
-														answTextField_1.setColumns(10);
-														
-																enterButton_1 = new JButton("Ввод");
-																
-																		backButton_1 = new JButton("Назад");
-																		
-																				nextButton_1 = new JButton("Вперед");
-																				
-																						textQuestTextArea_1 = new JTextArea();
-																						textQuestTextArea_1.setWrapStyleWord(true);
-																						textQuestTextArea_1.setLineWrap(true);
-																						textQuestTextArea_1.setEditable(false);
-																						textQuestTextArea_1.setBackground(Color.ORANGE);
-																						GroupLayout gl_testPanel_1 = new GroupLayout(testPanel_1);
-																						gl_testPanel_1.setHorizontalGroup(
-																							gl_testPanel_1.createParallelGroup(Alignment.LEADING)
-																								.addGroup(gl_testPanel_1.createSequentialGroup()
-																									.addGap(15)
-																									.addGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
-																										.addGroup(gl_testPanel_1.createSequentialGroup()
-																											.addGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
-																												.addGroup(gl_testPanel_1.createSequentialGroup()
-																													.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
-																													.addGap(487))
-																												.addGroup(gl_testPanel_1.createSequentialGroup()
-																													.addComponent(themeLabel_1, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE)
-																													.addGap(448))
-																												.addGroup(gl_testPanel_1.createSequentialGroup()
-																													.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 547, GroupLayout.PREFERRED_SIZE)
-																													.addGap(18)))
-																											.addGap(226))
-																										.addGroup(gl_testPanel_1.createSequentialGroup()
-																											.addGroup(gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
-																												.addComponent(textQuestTextArea_1, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 671, Short.MAX_VALUE)
-																												.addGroup(gl_testPanel_1.createSequentialGroup()
-																													.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-																													.addGap(18)
-																													.addComponent(answTextField_1, GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-																													.addGap(18)
-																													.addComponent(enterButton_1, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-																													.addGap(18)
-																													.addComponent(backButton_1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-																													.addPreferredGap(ComponentPlacement.RELATED)
-																													.addComponent(nextButton_1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
-																											.addGap(120))))
-																						);
-																						gl_testPanel_1.setVerticalGroup(
-																							gl_testPanel_1.createParallelGroup(Alignment.TRAILING)
-																								.addGroup(gl_testPanel_1.createSequentialGroup()
-																									.addGap(20)
-																									.addComponent(themesLabel_1, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-																									.addPreferredGap(ComponentPlacement.RELATED)
-																									.addComponent(themeLabel_1)
-																									.addPreferredGap(ComponentPlacement.UNRELATED)
-																									.addComponent(nameQuestLabel_1, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-																									.addPreferredGap(ComponentPlacement.RELATED)
-																									.addComponent(textQuestTextArea_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
-																									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																									.addGroup(gl_testPanel_1.createParallelGroup(Alignment.BASELINE)
-																										.addComponent(answLabel_1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(answTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-																										.addComponent(enterButton_1)
-																										.addComponent(backButton_1)
-																										.addComponent(nextButton_1))
-																									.addGap(53))
-																						);
-																						testPanel_1.setLayout(gl_testPanel_1);
 
 		testPanel_3 = new JPanel();
 		testPanel_3.setBackground(Color.WHITE);
