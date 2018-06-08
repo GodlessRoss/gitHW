@@ -175,6 +175,7 @@ public class MainFrame extends JFrame {
 		themeTextArea.setEditable(false);
 
 		themeTree = new JTree();
+		themeTree.setBorder(UIManager.getBorder("Button.border"));
 
 		themeTree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("Темы") {
 			/**
