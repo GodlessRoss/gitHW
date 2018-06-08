@@ -178,4 +178,8 @@ public final class Helper {
 
 	}
 
+	public static void gerateTotalTest() {
+		
+	}
+
 }
