@@ -40,8 +40,9 @@ public class TestFrame extends JFrame {
 	private int counter = 0;
 	private Test[] totalTests;
 	private Question[] totalQuestions;
-//	private JButton[] buttons = { quest1Button, quest2Button, quest3Button, quest4Button, quest5Button, quest6Button,
-//			quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button };
+	// private JButton[] buttons = { quest1Button, quest2Button, quest3Button,
+	// quest4Button, quest5Button, quest6Button,
+	// quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button };
 
 	public TestFrame(Test[] tests, MainFrame mainFrame) {
 		getContentPane().setBackground(Color.WHITE);
@@ -94,42 +95,185 @@ public class TestFrame extends JFrame {
 		enterButton = new JButton("Принять");
 
 		quest1Button = new JButton("1");
+		quest1Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[0].getName());
+				questionTextArea.setText(totalQuestions[0].getText());
+				counter = 0;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+
+			}
+		});
 		panel.add(quest1Button);
 
 		quest2Button = new JButton("2");
+		quest2Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 1;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest2Button);
 
 		quest3Button = new JButton("3");
+		quest3Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 2;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest3Button);
 
 		quest4Button = new JButton("4");
+		quest4Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 3;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest4Button);
 
 		quest5Button = new JButton("5");
+		quest5Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 4;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest5Button);
 
 		quest6Button = new JButton("6");
+		quest6Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 5;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest6Button);
 
 		quest7Button = new JButton("7");
+		quest7Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 6;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest7Button);
 
 		quest8Bbutton = new JButton("8");
+		quest8Bbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 7;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest8Bbutton);
 
 		quest9Button = new JButton("9");
+		quest9Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 8;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest9Button);
 
 		quest10Button = new JButton("10");
+		quest10Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 9;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest10Button);
 
 		quest11Button = new JButton("11");
+		quest11Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 10;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest11Button);
-		
+
 		quest12Button = new JButton("12");
+		quest12Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				counter = 11;
+				currentThemeLabel.setText(totalTests[0].getName());
+				questionLabel.setText(totalQuestions[counter].getName());
+				questionTextArea.setText(totalQuestions[counter].getText());
+				Helper.setColorButtons(counter, quest1Button, quest2Button, quest3Button, quest4Button, quest5Button,
+						quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button, quest11Button,
+						quest12Button);
+			}
+		});
 		panel.add(quest12Button);
 
 		JButton completeButton = new JButton("Закончить тест");
+		completeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,
+						"Программист Антон сказал, что реализует эту возможность к субботе, правда он не уточнил к какой..",
+						"Недовольство Владимира!", JOptionPane.PLAIN_MESSAGE);
+			}
+		});
 		panel.add(completeButton);
 
 		nextButton = new JButton(">");
@@ -140,7 +284,7 @@ public class TestFrame extends JFrame {
 					currentThemeLabel.setText(totalTests[0].getName());
 					questionLabel.setText(totalQuestions[++counter].getName());
 					questionTextArea.setText(totalQuestions[counter].getText());
-					Helper.setColorButton(counter, tempCounter, quest1Button, quest2Button, quest3Button, quest4Button,
+					Helper.setColorButtons(counter, tempCounter, quest1Button, quest2Button, quest3Button, quest4Button,
 							quest5Button, quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button,
 							quest11Button, quest12Button);
 				}
@@ -155,7 +299,7 @@ public class TestFrame extends JFrame {
 					currentThemeLabel.setText(totalTests[0].getName());
 					questionLabel.setText(totalQuestions[--counter].getName());
 					questionTextArea.setText(totalQuestions[counter].getText());
-					Helper.setColorButton(counter, tempCounter, quest1Button, quest2Button, quest3Button, quest4Button,
+					Helper.setColorButtons(counter, tempCounter, quest1Button, quest2Button, quest3Button, quest4Button,
 							quest5Button, quest6Button, quest7Button, quest8Bbutton, quest9Button, quest10Button,
 							quest11Button, quest12Button);
 				}

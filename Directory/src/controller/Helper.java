@@ -38,9 +38,9 @@ public final class Helper {
 		return null;
 	}
 
-	public static void setColorButton(int counter, int tempCounter, JButton button1, JButton button2, JButton button3, JButton button4,
-			JButton button5, JButton button6, JButton button7, JButton button8, JButton button9, JButton button10,
-			JButton button11, JButton button12) {
+	public static void setColorButtons(int counter, int tempCounter, JButton button1, JButton button2, JButton button3,
+			JButton button4, JButton button5, JButton button6, JButton button7, JButton button8, JButton button9,
+			JButton button10, JButton button11, JButton button12) {
 		switch (counter) {
 		case 0:
 			button1.setBackground(Color.YELLOW);
@@ -133,4 +133,49 @@ public final class Helper {
 
 		}
 	}
+
+	public static void setColorButtons(int counter, JButton button1, JButton button2, JButton button3, JButton button4,
+			JButton button5, JButton button6, JButton button7, JButton button8, JButton button9, JButton button10,
+			JButton button11, JButton button12) {
+		button1.setBackground(Color.GRAY);
+		button2.setBackground(Color.GRAY);
+		button3.setBackground(Color.GRAY);
+		button4.setBackground(Color.GRAY);
+		button5.setBackground(Color.GRAY);
+		button6.setBackground(Color.GRAY);
+		button7.setBackground(Color.GRAY);
+		button8.setBackground(Color.GRAY);
+		button9.setBackground(Color.GRAY);
+		button10.setBackground(Color.GRAY);
+		button11.setBackground(Color.GRAY);
+		button12.setBackground(Color.GRAY);
+
+		if (counter == 0) {
+			button1.setBackground(Color.YELLOW);
+		} else if (counter == 1) {
+			button2.setBackground(Color.YELLOW);
+		} else if (counter == 2) {
+			button3.setBackground(Color.YELLOW);
+		} else if (counter == 3) {
+			button4.setBackground(Color.YELLOW);
+		} else if (counter == 4) {
+			button5.setBackground(Color.YELLOW);
+		} else if (counter == 5) {
+			button6.setBackground(Color.YELLOW);
+		} else if (counter == 6) {
+			button7.setBackground(Color.YELLOW);
+		} else if (counter == 7) {
+			button8.setBackground(Color.YELLOW);
+		} else if (counter == 8) {
+			button9.setBackground(Color.YELLOW);
+		} else if (counter == 9) {
+			button10.setBackground(Color.YELLOW);
+		} else if (counter == 10) {
+			button11.setBackground(Color.YELLOW);
+		} else if (counter == 11) {
+			button12.setBackground(Color.YELLOW);
+		}
+
+	}
+
 }
